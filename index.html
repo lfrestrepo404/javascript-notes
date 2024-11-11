@@ -92,6 +92,40 @@
                 <li><strong>Arrays y estructuras de datos:</strong> Formas de organizar y almacenar múltiples elementos en una sola variable.</li>
                 <li><strong>Objetos:</strong> Entidades que encapsulan datos y funcionalidades relacionados, especialmente en lenguajes orientados a objetos.</li>
             </ul>
+
+            <hr>
+            <h2>Nota: necesitas hacer esto para poner en práctica lo que viene</h2>
+    <p>Para poder ejecutar los ejemplos de JavaScript en este capítulo y practicar los conceptos, sigue estos pasos para configurar tu entorno:</p>
+
+    <ol>
+        <li><strong>Crea una carpeta para el proyecto:</strong>
+            <p>En tu sistema de archivos, crea una nueva carpeta con el nombre <code>fundamentos-js</code>. Esta carpeta contendrá todos los archivos que utilizaremos para nuestros ejemplos de JavaScript.</p>
+        </li>
+
+        <li><strong>Abre Visual Studio Code:</strong>
+            <p>Abre Visual Studio Code y selecciona <em>File</em> &gt; <em>Open Folder...</em> o simplemente arrastra la carpeta <code>fundamentos-js</code> a la ventana de Visual Studio Code para abrirla.</p>
+        </li>
+
+        <li><strong>Crea un archivo JavaScript:</strong>
+            <p>Dentro de la carpeta <code>fundamentos-js</code>, crea un nuevo archivo y nómbralo <code>fundamentos.js</code>. Este archivo es donde escribiremos y ejecutaremos nuestro código de ejemplo.</p>
+        </li>
+
+        <li><strong>Escribe tu primer código:</strong>
+            <p>Para probar que todo funciona correctamente, escribe el siguiente código en el archivo <code>fundamentos.js</code>:</p>
+
+            <pre><code><span class="comment">// Código de prueba</span>
+console.log("¡Configuración completa!");</code></pre>
+        </li>
+
+        <li><strong>Ejecuta el código en la consola:</strong>
+            <p>Asegúrate de tener <strong>Node.js</strong> instalado en tu computadora. Luego, abre la terminal en Visual Studio Code seleccionando <em>View</em> &gt; <em>Terminal</em>, o presiona <code>Ctrl + Ñ</code> (la tecla de tilde inversa).</p>
+            <p>En la terminal, navega a la carpeta <code>fundamentos-js</code> (si no estás ya en ella) y ejecuta el siguiente comando para ejecutar el archivo:</p>
+
+            <pre><code><span class="comment"># Ejecutar el archivo en Node.js</span>
+node fundamentos.js</code></pre>
+            <p>Si todo está configurado correctamente, deberías ver el mensaje <code>¡Configuración completa!</code> en la consola. Esto significa que ya tienes el entorno listo para practicar los fundamentos de JavaScript.</p>
+        </li>
+    </ol>
         
             <hr>
         
@@ -100,108 +134,112 @@
         </section>
         
         <section id="cont3">
-            <h1>Capítulo 3: Comandos Básicos de Git Local</h1>
-
-            <h2>Introducción</h2>
-            <p>En este capítulo, aprenderemos sobre los comandos básicos de Git que puedes utilizar en un entorno local.
-                Estos comandos te permiten gestionar tu proyecto y el historial de cambios sin necesidad de un
-                repositorio remoto. Familiarizarse con estos comandos es fundamental para cualquier desarrollador que
-                trabaje con Git.</p>
-            <hr>
-            <h2>Comandos Básicos de Git Local</h2>
-
-            <h3>1. git init</h3>
-            <p><strong>Descripción:</strong> Inicializa un nuevo repositorio Git en el directorio actual.</p>
-            <pre><code><span class="comment"># Inicializar un nuevo repositorio</span>
-                git init
-                <span class="comment"># Esto crea un nuevo subdirectorio llamado .git que contiene todos los archivos necesarios para el repositorio.</span>
-                </code></pre>
-
-            <h3>2. git config</h3>
-            <p><strong>Descripción:</strong> Configura la información del usuario, como el nombre y el correo
-                electrónico, que se utilizarán en las confirmaciones.</p>
-            <pre><code><span class="comment"># Configurar el nombre de usuario</span>
-            git config --global user.name "Tu Nombre"
-            <span class="comment"># Configurar el correo electrónico</span>
-            git config --global user.email "tuemail@example.com"
-            <span class="comment"># Esto asegura que tus confirmaciones se asocien correctamente a tu identidad.</span>
+            <h1>Capítulo 3: Variables, Constantes y Tipos de Datos</h1>
+        
+            <h2>Variables</h2>
+            <p>En JavaScript, las variables son espacios en memoria donde se pueden almacenar y manipular datos. Se declaran usando <code>var</code>, <code>let</code> o <code>const</code>. La diferencia principal entre <code>let</code> y <code>var</code> es su alcance (scope) y comportamiento. Veamos un ejemplo:</p>
+        
+            <pre><code><span class="comment">// Declarar una variable con let</span>
+        let nombre = "Carlos";
+        <span class="comment">// Imprimir el valor de la variable</span>
+        console.log(nombre);
+        <span class="comment">// Verificar el tipo de dato</span>
+        console.log(typeof nombre); <span class="comment">// string</span>
             </code></pre>
-
-            <h3>3. git status</h3>
-            <p><strong>Descripción:</strong> Muestra el estado de los archivos en el repositorio, indicando si están
-                modificados, sin seguimiento o listos para ser confirmados.</p>
-            <pre><code><span class="comment"># Ver el estado de los archivos</span>
-                git status
-                <span class="comment"># Esto muestra qué archivos han sido modificados o añadidos y cuáles están listos para ser confirmados.</span>
-                </code></pre>
-
-            <h3>4. git add</h3>
-            <p><strong>Descripción:</strong> Agrega archivos al área de preparación (staging area) para su inclusión en
-                la próxima confirmación.</p>
-            <pre><code><span class="comment"># Agregar un archivo específico</span>
-                git add nombre_del_archivo
-                <span class="comment"># Agregar todos los archivos modificados</span>
-                git add .
-                </code></pre>
-
-            <h3>5. git commit</h3>
-            <p><strong>Descripción:</strong> Crea una nueva confirmación en el repositorio, guardando los cambios del
-                área de preparación.</p>
-            <pre><code><span class="comment"># Confirmar los cambios</span>
-                git commit -m "Mensaje de la confirmación"
-                <span class="comment"># Este mensaje debe describir brevemente los cambios realizados.</span>
-                </code></pre>
-
-            <h3>6. git log</h3>
-            <p><strong>Descripción:</strong> Muestra el historial de confirmaciones en el repositorio, mostrando los
-                mensajes, fechas y autores de cada confirmación.</p>
-            <pre><code><span class="comment"># Ver el historial de confirmaciones</span>
-                    git log
-                    <span class="comment"># Ver el historial en una línea</span>
-                    git log --oneline
-                    <span class="comment"># Esto muestra un resumen conciso de cada confirmación.</span>
-                    </code></pre>
-
-            <h3>7. git diff</h3>
-            <p><strong>Descripción:</strong> Muestra las diferencias entre archivos o entre el estado actual y el último
-                commit.</p>
-            <pre><code><span class="comment"># Ver las diferencias en los archivos modificados</span>
-                git diff
-                <span class="comment"># Esto muestra los cambios no confirmados desde el último commit.</span>
-                </code></pre>
-
-            <h3>8. git checkout</h3>
-            <p><strong>Descripción:</strong> Cambia de rama o restaura archivos del repositorio a un estado anterior.
-            </p>
-            <pre><code><span class="comment"># Cambiar a una rama específica</span>
-                git checkout nombre_de_la_rama
-                <span class="comment"># Restaurar un archivo específico al último commit</span>
-                git checkout nombre_del_archivo
-                <span class="comment"># Cambiar a un commit específico</span>
-                git checkout id_del_commit
-                </code></pre>
-
-            <h3>9. git reset</h3>
-            <p><strong>Descripción:</strong> Restablece el índice y el directorio de trabajo a un estado anterior.</p>
-            <pre><code><span class="comment"># Restablecer el último commit y mantener los cambios en el directorio de trabajo</span>
-                git reset --soft HEAD~1
-                <span class="comment"># Restablecer el último commit y descartar los cambios</span>
-                git reset --hard HEAD~1
-                </code></pre>
-
-            <h3>10. git rm</h3>
-            <p><strong>Descripción:</strong> Elimina archivos del repositorio y del sistema de archivos.</p>
-            <pre><code><span class="comment"># Eliminar un archivo</span>
-                    git rm nombre_del_archivo
-                    <span class="comment"># Esto elimina el archivo y lo prepara para la próxima confirmación.</span>
-                    </code></pre>
+        
             <hr>
-            <h2>Conclusión</h2>
-            <p>Dominar estos comandos básicos de Git local es crucial para gestionar eficazmente tu proyecto y su
-                historial de versiones. Estos comandos te permitirán mantener un control preciso sobre los cambios en tu
-                código y facilitarán el desarrollo colaborativo en el futuro.</p>
+        
+            <h2>Constantes</h2>
+            <p>Una constante es similar a una variable, pero su valor no puede cambiar una vez que ha sido asignado. Se declara con la palabra clave <code>const</code>. Es útil para valores que no deben modificarse durante la ejecución del programa:</p>
+        
+            <pre><code><span class="comment">// Declarar una constante</span>
+        const PI = 3.14159;
+        <span class="comment">// Imprimir el valor de la constante</span>
+        console.log(PI);
+        <span class="comment">// Verificar el tipo de dato</span>
+        console.log(typeof PI); <span class="comment">// number</span>
+            </code></pre>
+        
+            <hr>
+        
+            <h2>Tipos de Datos</h2>
+            <p>Los tipos de datos en JavaScript se dividen en dos grandes categorías: primitivos y objetos. Aquí algunos de los principales tipos de datos primitivos:</p>
+        
+            <h3>1. String (Cadena de texto)</h3>
+            <pre><code><span class="comment">// Declarar un string</span>
+        let mensaje = "Hola, mundo!";
+        console.log(mensaje);
+        console.log(typeof mensaje); <span class="comment">// string</span>
+            </code></pre>
+        
+            <h3>2. Number (Número)</h3>
+            <pre><code><span class="comment">// Declarar un número</span>
+        let edad = 25;
+        console.log(edad);
+        console.log(typeof edad); <span class="comment">// number</span>
+            </code></pre>
+        
+            <h3>3. Boolean (Booleano)</h3>
+            <pre><code><span class="comment">// Declarar un booleano</span>
+        let esMayorDeEdad = true;
+        console.log(esMayorDeEdad);
+        console.log(typeof esMayorDeEdad); <span class="comment">// boolean</span>
+            </code></pre>
+        
+            <h3>4. Undefined</h3>
+            <pre><code><span class="comment">// Declarar una variable sin asignarle un valor</span>
+        let valor;
+        console.log(valor);
+        console.log(typeof valor); <span class="comment">// undefined</span>
+            </code></pre>
+        
+            <h3>5. Null</h3>
+            <pre><code><span class="comment">// Declarar una variable con valor nulo</span>
+        let vacio = null;
+        console.log(vacio);
+        console.log(typeof vacio); <span class="comment">// object (es un caso especial en JavaScript)</span>
+            </code></pre>
+        
+            <hr>
+        
+            <h2>Concatenación de Variables</h2>
+            <p>Podemos combinar valores de diferentes tipos de datos en un solo <code>console.log</code> mediante la concatenación. Veamos un ejemplo:</p>
+        
+            <pre><code><span class="comment">// Declarar variables de diferentes tipos</span>
+        let nombre = "Ana";
+        let edad = 30;
+        let esEstudiante = true;
+        
+        <span class="comment">// Concatenar variables en un solo console.log</span>
+        console.log("Nombre: " + nombre + ", Edad: " + edad + ", Estudiante: " + esEstudiante);
+        <span class="comment">// Resultado: Nombre: Ana, Edad: 30, Estudiante: true</span>
+            </code></pre>
+        
+    <h3>6. Object (Objeto)</h3>
+    <p>Un objeto es una colección de pares clave-valor y permite almacenar múltiples valores en una sola variable. Es útil para representar entidades complejas. Veamos un ejemplo:</p>
+    <pre><code><span class="comment">// Declarar un objeto</span>
+let persona = {
+    nombre: "Juan",
+    edad: 30,
+    esEstudiante: true
+};
+console.log(persona);
+console.log(typeof persona); <span class="comment">// object</span>
+    </code></pre>
 
+    <h3>7. Array (Arreglo)</h3>
+    <p>Un arreglo es un tipo especial de objeto que almacena una lista ordenada de elementos. Cada elemento puede ser de cualquier tipo de dato y se accede a través de un índice:</p>
+    <pre><code><span class="comment">// Declarar un array</span>
+let colores = ["rojo", "verde", "azul"];
+console.log(colores);
+console.log(typeof colores); <span class="comment">// object (arrays son objetos en JavaScript)</span>
+    </code></pre>
+            <hr>
+        
+            <h2>Conclusión</h2>
+            <p>Las variables, constantes y tipos de datos son conceptos esenciales en JavaScript y cualquier otro lenguaje de programación. Entender cómo almacenarlos y manejarlos correctamente es clave para estructurar y manipular información en un programa. La concatenación de variables permite combinar valores de distintos tipos para crear mensajes informativos y legibles.</p>
         </section>
+        
 
         <section id="cont4">
             <h1>Capítulo 4: Flujo de Trabajo en Git</h1>
