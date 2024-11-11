@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Git y GitHub</title>
+    <title>JavaScript - Fundamentos de programación</title>
     <link rel="stylesheet" href="css/styles.css">
     <!-- Agrega la librería de iconos de FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -242,415 +242,463 @@ console.log(typeof colores); <span class="comment">// object (arrays son objetos
         
 
         <section id="cont4">
-            <h1>Capítulo 4: Flujo de Trabajo en Git</h1>
-
-            <h2>Introducción</h2>
-            <p>En este capítulo, exploraremos el flujo de trabajo en Git, que se refiere a la serie de pasos que
-                seguimos al utilizar este sistema de control de versiones. Comprender este flujo es esencial para
-                gestionar eficazmente tus proyectos y el historial de cambios en el código.</p>
+            
+            <h1>Capítulo 4: Operadores en JavaScript</h1>
+        
+            <h2>Operadores de Asignación</h2>
+            <p>Los operadores de asignación se utilizan para asignar valores a las variables. El más común es <code>=</code>, pero existen otros que permiten realizar operaciones y asignar el resultado al mismo tiempo:</p>
+        
+            <pre><code><span class="comment">// Asignación simple</span>
+        let a = 5;
+        
+        <span class="comment">// Asignación con suma</span>
+        a += 3; <span class="comment">// a = a + 3</span>
+        console.log(a); <span class="comment">// 8</span>
+        
+        <span class="comment">// Asignación con multiplicación</span>
+        a *= 2; <span class="comment">// a = a * 2</span>
+        console.log(a); <span class="comment">// 16</span>
+        
+        <span class="comment">// Asignación con división</span>
+        a /= 4; <span class="comment">// a = a / 4</span>
+        console.log(a); <span class="comment">// 4</span>
+            </code></pre>
+        
             <hr>
-            <h2>Flujo de Trabajo en Git</h2>
-
-            <h3>1. Inicialización del Repositorio</h3>
-            <p><strong>Descripción:</strong> El primer paso es inicializar un nuevo repositorio utilizando el comando
-                <code>git init</code>.
-            </p>
-            <pre><code><span class="comment"># Inicializar un nuevo repositorio en el directorio actual</span>
-git init
-<span class="comment"># Esto crea un subdirectorio .git que contiene toda la información del repositorio.</span>
-</code></pre>
-
-            <h3>2. Estados de los Archivos</h3>
-            <p>En Git, los archivos pueden estar en uno de los siguientes estados:</p>
-            <ul>
-                <li><strong>Untracked:</strong> Archivos que Git no está siguiendo. Son nuevos en el directorio del
-                    repositorio.</li>
-                <li><strong>Tracked:</strong> Archivos que Git está siguiendo. Estos pueden estar en uno de los
-                    siguientes estados:
-                    <ul>
-                        <li><strong>Modified:</strong> Archivos que han sido cambiados desde el último commit.</li>
-                        <li><strong>Staged:</strong> Archivos que han sido preparados para ser incluidos en el próximo
-                            commit.</li>
-                        <li><strong>Committed:</strong> Archivos que han sido guardados en el historial de commits de
-                            Git.</li>
-                    </ul>
-                </li>
-            </ul>
-
-            <h3>3. Agregar Archivos al Área de Preparación</h3>
-            <p><strong>Descripción:</strong> Para mover archivos de untracked a tracked, utilizamos el comando
-                <code>git add</code>.
-            </p>
-            <pre><code><span class="comment"># Agregar un archivo específico al área de preparación</span>
-git add nombre_del_archivo
-<span class="comment"># Esto cambia el estado del archivo a staged.</span>
-</code></pre>
-
-            <h3>4. Confirmar Cambios</h3>
-            <p><strong>Descripción:</strong> Luego de agregar archivos al área de preparación, utilizamos
-                <code>git commit</code> para guardar los cambios en el historial del repositorio.
-            </p>
-            <pre><code><span class="comment"># Confirmar los cambios en el repositorio</span>
-git commit -m "Descripción de los cambios realizados"
-<span class="comment"># Esto cambia el estado de los archivos de staged a committed.</span>
-</code></pre>
-
-            <h3>5. Navegar entre Commits</h3>
-            <p><strong>Descripción:</strong> Para revisar el historial de commits y navegar entre ellos, utilizamos el
-                comando <code>git checkout</code>.</p>
-            <pre><code><span class="comment"># Ver el historial de commits</span>
-git log
-<span class="comment"># Cambiar a un commit específico</span>
-git checkout id_del_commit
-<span class="comment"># Esto restablece el estado de tu proyecto a cómo estaba en ese commit.</span>
-</code></pre>
+        
+            <h2>Operadores de Comparación</h2>
+            <p>Los operadores de comparación se usan para comparar valores y devuelven un resultado booleano (<code>true</code> o <code>false</code>). Algunos de los operadores más comunes son:</p>
+        
+            <pre><code><span class="comment">// Igualdad estricta (valor y tipo)</span>
+        console.log(5 === 5); <span class="comment">// true</span>
+        console.log(5 === "5"); <span class="comment">// false</span>
+        
+        <span class="comment">// Desigualdad</span>
+        console.log(5 != 3); <span class="comment">// true</span>
+        console.log(5 !== "5"); <span class="comment">// true (diferente en valor o tipo)</span>
+        
+        <span class="comment">// Mayor y menor que</span>
+        console.log(10 > 5); <span class="comment">// true</span>
+        console.log(5 <= 5); <span class="comment">// true</span>
+            </code></pre>
+        
             <hr>
+        
+            <h2>Operadores Aritméticos</h2>
+            <p>Los operadores aritméticos permiten realizar cálculos matemáticos con números. Aquí están los operadores básicos:</p>
+        
+            <pre><code><span class="comment">// Suma y Resta</span>
+        let x = 10;
+        let y = 5;
+        console.log(x + y); <span class="comment">// 15</span>
+        console.log(x - y); <span class="comment">// 5</span>
+        
+        <span class="comment">// Multiplicación y División</span>
+        console.log(x * y); <span class="comment">// 50</span>
+        console.log(x / y); <span class="comment">// 2</span>
+        
+        <span class="comment">// Módulo (resto de la división)</span>
+        console.log(x % y); <span class="comment">// 0</span>
+        
+        <span class="comment">// Exponenciación</span>
+        console.log(2 ** 3); <span class="comment">// 8</span>
+            </code></pre>
+        
+            <hr>
+        
+            <h2>Operadores Lógicos</h2>
+            <p>Los operadores lógicos se utilizan para combinar condiciones lógicas. Los más comunes son:</p>
+        
+            <pre><code><span class="comment">// Operador AND (&&) - Devuelve true solo si ambas condiciones son true</span>
+        console.log(true && true); <span class="comment">// true</span>
+        console.log(true && false); <span class="comment">// false</span>
+        
+        <span class="comment">// Operador OR (||) - Devuelve true si al menos una condición es true</span>
+        console.log(true || false); <span class="comment">// true</span>
+        console.log(false || false); <span class="comment">// false</span>
+        
+        <span class="comment">// Operador NOT (!) - Invierte el valor de verdad</span>
+        console.log(!true); <span class="comment">// false</span>
+        console.log(!false); <span class="comment">// true</span>
+            </code></pre>
+        
+            <hr>
+        
             <h2>Conclusión</h2>
-            <p>Comprender el flujo de trabajo en Git es fundamental para cualquier desarrollador. Desde la
-                inicialización del repositorio hasta la confirmación de cambios y la navegación entre commits, cada paso
-                permite un control efectivo sobre el desarrollo de software y facilita la colaboración entre equipos.
-            </p>
-
+            <p>Comprender los operadores en JavaScript es esencial para realizar cálculos, comparar valores y construir condiciones lógicas en tu código. Estos operadores son fundamentales para el flujo de trabajo en programación y son aplicables en casi todos los lenguajes.</p>
         </section>
-
+        
         <section id="cont5">
-            <h1>Capítulo 5: Volver a Versiones de un Commit Específico</h1>
-
-            <h2>Introducción</h2>
-            <p>En este capítulo, aprenderemos a restaurar archivos o todo el proyecto a una versión específica de un
-                commit en Git. Esto es útil cuando necesitas deshacer cambios o revisar un estado anterior de tu código.
-                Veremos cómo realizar estos procesos tanto para un archivo específico como para todo el proyecto,
-                utilizando comandos de consulta y el restablecimiento de cambios.</p>
+            <h1>Capítulo 5: Estructuras de Control en JavaScript</h1>
+        
+            <h2>¿Qué son las Estructuras de Control?</h2>
+            <p>Las estructuras de control permiten controlar el flujo de ejecución de nuestro código en función de ciertas condiciones o repetir una serie de instrucciones múltiples veces. Las principales estructuras de control en JavaScript son las condicionales y los bucles.</p>
+        
             <hr>
-            <h2>Restaurar un Archivo a un Commit Específico</h2>
-
-            <h3>1. Identificar el Commit</h3>
-            <p><strong>Descripción:</strong> Para restaurar un archivo a un estado anterior, primero necesitamos
-                identificar el commit al que deseamos volver. Esto se puede hacer utilizando el comando
-                <code>git log</code>.
-            </p>
-            <pre><code><span class="comment"># Ver el historial de commits y obtener el ID del commit deseado</span>
-git log
-</code></pre>
-
-            <h3>2. Restaurar el Archivo</h3>
-            <p><strong>Descripción:</strong> Una vez que tenemos el ID del commit, podemos restaurar un archivo
-                específico utilizando <code>git checkout</code>.</p>
-            <pre><code><span class="comment"># Restaurar un archivo específico al estado de un commit anterior</span>
-git checkout id_del_commit -- nombre_del_archivo
-<span class="comment"># Esto reemplaza el contenido del archivo con el de ese commit específico.</span>
-</code></pre>
-
-            <h3>3. Confirmar los Cambios</h3>
-            <p><strong>Descripción:</strong> Después de restaurar el archivo, si deseas conservar este cambio en el
-                historial, debes confirmar el cambio.</p>
-            <pre><code><span class="comment"># Agregar el archivo restaurado al área de preparación</span>
-git add nombre_del_archivo
-<span class="comment"># Confirmar el cambio restaurado</span>
-git commit -m "Restaurar nombre_del_archivo a la versión del commit id_del_commit"
-</code></pre>
+        
+            <h2>Condicionales</h2>
+            <p>Las estructuras condicionales se utilizan para ejecutar bloques de código solo si se cumplen ciertas condiciones.</p>
+        
+            <h3>If, Else If y Else</h3>
+            <p>La estructura <code>if</code> permite ejecutar un bloque de código si una condición es verdadera. Puedes utilizar <code>else if</code> para agregar condiciones adicionales, y <code>else</code> para ejecutar un bloque si ninguna condición anterior se cumple.</p>
+        
+            <pre><code><span class="comment">// Ejemplo de if, else if y else</span>
+        let edad = 20;
+        
+        if (edad < 18) {
+            console.log("Eres menor de edad");
+        } else if (edad < 65) {
+            console.log("Eres adulto");
+        } else {
+            console.log("Eres adulto mayor");
+        }
+            </code></pre>
+        
+            <h3>Switch Case</h3>
+            <p>El <code>switch</code> se utiliza cuando se desea comparar el mismo valor contra múltiples opciones posibles. Es útil cuando se tienen muchas condiciones específicas para evaluar.</p>
+        
+            <pre><code><span class="comment">// Ejemplo de switch case</span>
+        let dia = "Lunes";
+        
+        switch (dia) {
+            case "Lunes":
+                console.log("Comienzo de la semana");
+                break;
+            case "Viernes":
+                console.log("Fin de la semana laboral");
+                break;
+            case "Sábado":
+            case "Domingo":
+                console.log("Es fin de semana");
+                break;
+            default:
+                console.log("Es un día de semana común");
+        }
+            </code></pre>
+        
             <hr>
-            <h2>Restaurar Todo el Proyecto a un Commit Específico</h2>
-
-            <h3>1. Identificar el Commit</h3>
-            <p>Al igual que antes, primero identifica el commit al que deseas volver.</p>
-            <pre><code><span class="comment"># Ver el historial de commits</span>
-git log
-</code></pre>
-
-            <h3>2. Volver a un Commit Específico</h3>
-            <p><strong>Descripción:</strong> Para restaurar todo el proyecto a un commit específico, puedes usar
-                <code>git checkout</code> o <code>git reset</code>.
-            </p>
-            <pre><code><span class="comment"># Volver a un commit específico (deshacer cambios)</span>
-git checkout id_del_commit
-<span class="comment"># Esto cambia el estado de todo el proyecto al de ese commit.</span>
-</code></pre>
-
-            <h3>3. Restablecer el Proyecto</h3>
-            <p><strong>Descripción:</strong> Si deseas deshacer los cambios permanentemente y volver al estado del
-                commit, puedes usar <code>git reset</code>.</p>
-            <pre><code><span class="comment"># Restablecer el proyecto al commit específico (soft)</span>
-git reset --soft id_del_commit
-<span class="comment"># Esto mantiene los cambios en el área de preparación.</span>
-
-<span class="comment"># Restablecer el proyecto al commit específico (hard)</span>
-git reset --hard id_del_commit
-<span class="comment"># Esto descarta todos los cambios y restablece el proyecto al estado de ese commit.</span>
-</code></pre>
+        
+            <h2>Bucles</h2>
+            <p>Los bucles se utilizan para repetir un bloque de código varias veces. En JavaScript, los bucles más comunes son <code>while</code> y <code>for</code>.</p>
+        
+            <h3>While</h3>
+            <p>El bucle <code>while</code> ejecuta un bloque de código mientras la condición sea verdadera. Es útil cuando no se sabe cuántas veces se debe repetir el ciclo, pero depende de una condición.</p>
+        
+            <pre><code><span class="comment">// Ejemplo de while</span>
+        let contador = 0;
+        
+        while (contador < 5) {
+            console.log("Contador: " + contador);
+            contador++;
+        }
+            </code></pre>
+        
+            <h3>For</h3>
+            <p>El bucle <code>for</code> es ideal para cuando se sabe cuántas veces se debe ejecutar el ciclo. Se utiliza con un contador que se incrementa o disminuye en cada iteración.</p>
+        
+            <pre><code><span class="comment">// Ejemplo de for</span>
+        for (let i = 0; i < 5; i++) {
+            console.log("Número: " + i);
+        }
+            </code></pre>
+        
             <hr>
+        
             <h2>Conclusión</h2>
-            <p>Restaurar versiones anteriores de archivos o todo el proyecto es una habilidad valiosa en Git. Aprender a
-                identificar commits y usar comandos como <code>git checkout</code> y <code>git reset</code> te permitirá
-                manejar el historial de cambios con mayor eficacia y recuperar versiones anteriores de manera segura.
-            </p>
-
+            <p>Las estructuras de control son esenciales para crear programas que puedan tomar decisiones y repetir acciones de manera eficiente. Aprender a usar condicionales y bucles es fundamental para el desarrollo en cualquier lenguaje de programación.</p>
         </section>
+        
         <section id="cont6">
-            <h1>Capítulo 6: Flujo de Trabajo con Repositorios Remotos</h1>
-
-            <h2>Introducción</h2>
-            <p>En este capítulo, exploraremos el flujo de trabajo en Git cuando trabajamos con repositorios remotos.
-                Este proceso es crucial para la colaboración en proyectos, ya que permite a varios desarrolladores
-                trabajar en el mismo código de manera eficiente y organizada. Veremos los comandos clave que se utilizan
-                para clonar repositorios, realizar cambios y sincronizar esos cambios con el repositorio remoto.</p>
-
-
-            <h2>¿Qué es un Repositorio Remoto?</h2>
-            <p>Un repositorio remoto es una versión de tu proyecto que se encuentra alojada en un servidor en línea. A
-                diferencia de un repositorio local, que se almacena en tu máquina, el repositorio remoto permite a
-                varios colaboradores acceder y trabajar en el mismo proyecto desde diferentes ubicaciones. Esto facilita
-                la colaboración y la sincronización de cambios entre los desarrolladores.</p>
+            <h1>Capítulo 6: Funciones en JavaScript</h1>
+        
+            <h2>¿Qué es una Función?</h2>
+            <p>Una función es un bloque de código reutilizable que realiza una tarea específica. Las funciones permiten estructurar y organizar el código para evitar repetición y mejorar la claridad. Se definen usando la palabra clave <code>function</code>, un nombre de función, paréntesis y llaves.</p>
+        
             <hr>
-            <h2>¿Qué es GitHub?</h2>
-            <p><strong>Definición:</strong> GitHub es una plataforma de desarrollo colaborativo que utiliza Git como
-                sistema de control de versiones. Permite a los usuarios alojar y gestionar sus repositorios remotos,
-                colaborar con otros, realizar revisiones de código y mucho más.</p>
-            <p><strong>Ejemplo:</strong> Un repositorio en GitHub puede ser un proyecto de software donde varios
-                desarrolladores trabajan juntos, compartiendo cambios, revisando el código de los demás y gestionando
-                versiones del proyecto.</p>
+        
+            <h2>Ejemplos de Funciones</h2>
+        
+            <h3>1. Función Básica sin Parámetros</h3>
+            <p>Una función básica que muestra un mensaje en la consola:</p>
+            <pre><code><span class="comment">// Declarar una función</span>
+        function saludo() {
+            console.log("¡Hola, bienvenido!");
+        }
+        <span class="comment">// Llamar a la función</span>
+        saludo();
+            </code></pre>
+        
+            <h3>2. Función con Parámetros</h3>
+            <p>Las funciones pueden recibir datos, llamados "parámetros", que se utilizan dentro de la función:</p>
+            <pre><code><span class="comment">// Función con parámetros</span>
+        function saludar(nombre) {
+            console.log("Hola, " + nombre + "!");
+        }
+        <span class="comment">// Llamar a la función pasando un argumento</span>
+        saludar("Ana");
+            </code></pre>
+        
+            <h3>3. Función con Retorno de Valor</h3>
+            <p>Las funciones pueden devolver un valor con la palabra clave <code>return</code>:</p>
+            <pre><code><span class="comment">// Función que retorna el cuadrado de un número</span>
+        function cuadrado(numero) {
+            return numero * numero;
+        }
+        <span class="comment">// Llamar a la función y almacenar el resultado</span>
+        let resultado = cuadrado(4);
+        console.log(resultado); <span class="comment">// 16</span>
+            </code></pre>
+        
             <hr>
-            <h2>Flujo de Trabajo con Repositorios Remotos</h2>
-
-            <h3>1. Clonar un Repositorio Remoto</h3>
-            <p><strong>Descripción:</strong> El primer paso al trabajar con un repositorio remoto es clonarlo a tu
-                máquina local. Esto se realiza utilizando el comando <code>git clone</code>.</p>
-            <pre><code><span class="comment"># Clonar un repositorio remoto</span>
-git clone https://github.com/usuario/repositorio.git
-<span class="comment"># Esto crea una copia local del repositorio remoto.</span>
-</code></pre>
-
-            <h3>2. Verificar el Estado del Repositorio</h3>
-            <p><strong>Descripción:</strong> Antes de realizar cambios, es una buena práctica verificar el estado del
-                repositorio. Esto se puede hacer con el comando <code>git status</code>.</p>
-            <pre><code><span class="comment"># Verificar el estado del repositorio</span>
-git status
-<span class="comment"># Esto muestra los archivos modificados, los archivos en el área de preparación y los untracked.</span>
-</code></pre>
-
-            <h3>3. Hacer Cambios y Prepararlos</h3>
-            <p><strong>Descripción:</strong> Una vez que el repositorio está clonado y has verificado el estado, puedes
-                realizar cambios en los archivos. Después de hacer los cambios, necesitas agregarlos al área de
-                preparación.</p>
-            <pre><code><span class="comment"># Agregar todos los cambios al área de preparación</span>
-git add .
-<span class="comment"># El punto (.) indica que se deben agregar todos los archivos modificados.</span>
-</code></pre>
-
-            <h3>4. Confirmar los Cambios</h3>
-            <p><strong>Descripción:</strong> Después de agregar los cambios, es necesario confirmarlos para que queden
-                registrados en el historial del repositorio local.</p>
-            <pre><code><span class="comment"># Confirmar los cambios realizados</span>
-git commit -m "Descripción de los cambios realizados"
-</code></pre>
-
-            <h3>5. Enviar Cambios al Repositorio Remoto</h3>
-            <p><strong>Descripción:</strong> Una vez que los cambios están confirmados, puedes enviarlos al repositorio
-                remoto usando el comando <code>git push</code>.</p>
-            <pre><code><span class="comment"># Enviar cambios al repositorio remoto</span>
-git push origin main
-<span class="comment"># "origin" es el nombre predeterminado para el repositorio remoto y "main" es la rama a la que se envían los cambios.</span>
-</code></pre>
-
-            <h3>6. Obtener Cambios del Repositorio Remoto</h3>
-            <p><strong>Descripción:</strong> Si otros colaboradores han realizado cambios en el repositorio remoto,
-                puedes obtener esos cambios utilizando <code>git pull</code>.</p>
-            <pre><code><span class="comment"># Obtener cambios del repositorio remoto y fusionarlos con la rama actual</span>
-git pull origin main
-</code></pre>
-
-            <h3>7. Repetir el Ciclo</h3>
-            <p><strong>Descripción:</strong> Este flujo de trabajo es cíclico. Después de realizar un
-                <code>git pull</code> para obtener los últimos cambios, puedes continuar haciendo modificaciones,
-                confirmándolas y enviándolas al repositorio remoto. Repite este ciclo de cambios, confirmaciones y
-                envíos según sea necesario.
-            </p>
+        
+            <h2>Funciones y Eventos</h2>
+            <p>En JavaScript, las funciones suelen ejecutarse en respuesta a eventos, como cuando se hace clic en un botón, se envía un formulario o se carga una página. Algunos eventos comunes son:</p>
+            <ul>
+                <li><strong>click:</strong> Se ejecuta cuando un elemento es clicado.</li>
+                <li><strong>submit:</strong> Se ejecuta cuando un formulario es enviado.</li>
+                <li><strong>load:</strong> Se ejecuta cuando la página ha cargado completamente.</li>
+                <li><strong>mouseover:</strong> Se ejecuta cuando el ratón pasa sobre un elemento.</li>
+            </ul>
+        
             <hr>
+        
+            <h2>Ejemplo Práctico</h2>
+    <p>Aquí tienes un ejemplo de HTML y JavaScript para mostrar un saludo "Hello World" cuando la página se carga utilizando el evento <code>onload</code> dentro de la etiqueta <code>&lt;body&gt;</code>:</p>
+    <pre><code>&lt;!DOCTYPE html&gt;
+        &lt;html lang="es"&gt;
+        &lt;head&gt;
+            &lt;meta charset="UTF-8"&gt;
+            &lt;title&gt;Ejemplo de Función al Cargar&lt;/title&gt;
+        &lt;/head&gt;
+        &lt;body onload="saludo()"&gt;
+        
+            <span class="comment">// Función que muestra un saludo en un alert</span>
+            &lt;script&gt;
+                function saludo() {
+                    alert("Hello World");
+                }
+            &lt;/script&gt;
+        
+        &lt;/body&gt;
+        &lt;/html&gt;
+        </code></pre>
+        
+
+        
+            <hr>
+        
             <h2>Conclusión</h2>
-            <p>El flujo de trabajo con repositorios remotos en Git es fundamental para la colaboración efectiva en
-                proyectos de desarrollo. A través de comandos como <code>git clone</code>, <code>git status</code>,
-                <code>git add .</code>, <code>git commit</code>, <code>git push</code>, y <code>git pull</code>, los
-                desarrolladores pueden sincronizar sus cambios y trabajar juntos de manera eficiente. Entender este
-                flujo de trabajo es clave para el éxito en proyectos de equipo.
-            </p>
-
-
-
-            <p>Este capitulo solo busca darte un mayor contexto, en los siguientes capitulos veremos como conectarnos a
-                nuestros repositorios remotos desde cero, por ahora espero hayas entendido el flujo</p>
+            <p>Las funciones son esenciales para organizar el código y realizar tareas específicas en JavaScript. Pueden responder a eventos que hacen nuestras aplicaciones interactivas, como este último ejemplo que ejecuta una función al cargar la página.</p>
         </section>
+        
         <section id="cont7">
-            <h1>Capítulo 7: Configuración de GitHub con Llaves SSH</h1>
-
-            <h2>Introducción</h2>
-            <p>En este capítulo, aprenderemos a configurar nuestra cuenta de GitHub en nuestro equipo utilizando llaves
-                SSH. Este proceso es fundamental para enlazar de manera segura nuestros dispositivos con GitHub, lo que
-                nos permite trabajar de forma más eficiente y colaborativa. Al usar llaves SSH, podemos autenticarnos
-                sin necesidad de ingresar nuestras credenciales cada vez que interactuamos con un repositorio remoto, lo
-                que simplifica nuestras operaciones diarias. Este método no solo mejora la seguridad al evitar el uso de
-                contraseñas en texto plano, sino que también optimiza nuestro flujo de trabajo, permitiéndonos
-                enfocarnos en el desarrollo y la colaboración con otros desarrolladores de manera más efectiva.</p>
-
+            <h1>Capítulo 7: Arrays y Estructuras de Datos</h1>
+        
+            <h2>¿Qué es un Array?</h2>
+            <p>Un array es una estructura de datos que permite almacenar múltiples valores en una sola variable. Los elementos dentro de un array están indexados, lo que significa que se pueden acceder a través de su posición (índice) en el array. Los arrays en JavaScript son muy útiles para organizar y manipular datos de manera eficiente.</p>
+        
             <hr>
-            <h2>¿Qué es una Llave SSH?</h2>
-            <p>Una llave SSH es un par de claves criptográficas que se utilizan para autenticar una conexión segura
-                entre tu máquina local y un servidor remoto, como GitHub. Consiste en una llave pública y una llave
-                privada. La llave pública se almacena en el servidor (GitHub), mientras que la llave privada se queda en
-                tu máquina local y nunca se comparte.</p>
+        
+            <h2>Declaración de un Array</h2>
+            <p>Para declarar un array en JavaScript, se utilizan los corchetes <code>[]</code>. A continuación, un ejemplo de un array con varios valores:</p>
+            <pre><code><span class="comment">// Declarar un array con valores numéricos</span>
+        let numeros = [1, 2, 3, 4, 5];
+        console.log(numeros); <span class="comment">// [1, 2, 3, 4, 5]</span>
+            </code></pre>
+        
+            <h2>Acceder a los Elementos de un Array</h2>
+            <p>Los elementos de un array se pueden acceder utilizando su índice, que comienza desde 0. A continuación, un ejemplo:</p>
+            <pre><code><span class="comment">// Acceder al primer elemento (índice 0)</span>
+        let primerNumero = numeros[0];
+        console.log(primerNumero); <span class="comment">// 1</span>
+        
+        <span class="comment">// Acceder al tercer elemento (índice 2)</span>
+        let tercerNumero = numeros[2];
+        console.log(tercerNumero); <span class="comment">// 3</span>
+            </code></pre>
+        
+            <h2>Recorrer un Array</h2>
+            <p>Se pueden recorrer los elementos de un array utilizando un bucle. Los bucles más comunes para recorrer un array son el bucle <code>for</code> y el método <code>forEach</code>.</p>
+        
+            <h3>1. Usando el bucle <code>for</code></h3>
+            <pre><code><span class="comment">// Usar un bucle for para recorrer un array</span>
+        for (let i = 0; i < numeros.length; i++) {
+            console.log(numeros[i]); <span class="comment">// Imprime cada elemento del array</span>
+        }
+            </code></pre>
+        
+            <h3>2. Usando el método <code>forEach</code></h3>
+            <pre><code><span class="comment">// Usar el método forEach para recorrer un array</span>
+        numeros.forEach(function(numero) {
+            console.log(numero); <span class="comment">// Imprime cada elemento del array</span>
+        });
+            </code></pre>
+        
+            <h2>Agregar y Eliminar Elementos en un Array</h2>
+            <p>Existen varios métodos para agregar o eliminar elementos en un array. Los más comunes son <code>push()</code>, <code>unshift()</code>, <code>pop()</code> y <code>shift()</code>.</p>
+        
+            <h3>1. <code>push()</code> - Agregar un Elemento al Final del Array</h3>
+            <pre><code><span class="comment">// Usar push() para agregar un elemento al final del array</span>
+        numeros.push(6);
+        console.log(numeros); <span class="comment">// [1, 2, 3, 4, 5, 6]</span>
+            </code></pre>
+        
+            <h3>2. <code>unshift()</code> - Agregar un Elemento al Principio del Array</h3>
+            <pre><code><span class="comment">// Usar unshift() para agregar un elemento al principio del array</span>
+        numeros.unshift(0);
+        console.log(numeros); <span class="comment">// [0, 1, 2, 3, 4, 5, 6]</span>
+            </code></pre>
+        
+            <h3>3. <code>pop()</code> - Eliminar un Elemento del Final del Array</h3>
+            <pre><code><span class="comment">// Usar pop() para eliminar el último elemento del array</span>
+        numeros.pop();
+        console.log(numeros); <span class="comment">// [0, 1, 2, 3, 4, 5]</span>
+            </code></pre>
+        
+            <h3>4. <code>shift()</code> - Eliminar un Elemento del Principio del Array</h3>
+            <pre><code><span class="comment">// Usar shift() para eliminar el primer elemento del array</span>
+        numeros.shift();
+        console.log(numeros); <span class="comment">// [1, 2, 3, 4, 5]</span>
+            </code></pre>
+        
             <hr>
-            <h2>Paso a Paso para Configurar Llaves SSH</h2>
-
-            <h3>1. Generar un Par de Llaves SSH</h3>
-            <p><strong>Descripción:</strong> El primer paso es generar un par de llaves SSH en tu máquina local. Esto se
-                hace mediante el comando <code>ssh-keygen</code>.</p>
-            <pre><code><span class="comment"># Generar un nuevo par de llaves SSH</span>
-ssh-keygen -t rsa -b 4096 -C "tu_email@example.com"
-<span class="comment"># El parámetro -C se utiliza para agregar un comentario que normalmente es tu email.</span>
-<span class="comment"># Presiona Enter para aceptar la ubicación predeterminada del archivo.</span>
-</code></pre>
-
-            <h3>2. Agregar la Llave SSH al Agente SSH</h3>
-            <p><strong>Descripción:</strong> Una vez generada la llave, necesitas agregarla al agente SSH para que la
-                gestione. Esto permite que tu máquina local use la llave automáticamente cuando interactúas con GitHub.
-            </p>
-            <pre><code><span class="comment"># Iniciar el agente SSH</span>
-eval "$(ssh-agent -s)"
-<span class="comment"># Agregar tu llave SSH generada al agente</span>
-ssh-add ~/.ssh/id_rsa
-</code></pre>
-
-            <h3>3. Buscar y Abrir la Llave Pública SSH en Visual Studio Code</h3>
-            <p><strong>Descripción:</strong> Ahora necesitas encontrar tu llave pública SSH para agregarla a tu cuenta
-                de GitHub. La llave pública se encuentra en el archivo <code>id_rsa.pub</code>.</p>
-            <p><strong>Paso a Paso:</strong></p>
-            <ol>
-                <li><strong>Buscar el Archivo:</strong> Abre tu terminal o línea de comandos y ejecuta el siguiente
-                    comando para buscar el archivo:</li>
-                <pre><code>ls ~/.ssh</code></pre>
-                <li><strong>Abrir el Archivo con Visual Studio Code:</strong> Usa el siguiente comando para abrir la
-                    llave pública en Visual Studio Code:</li>
-                <pre><code>code ~/.ssh/id_rsa.pub</code></pre>
-                <li><strong>Copiar la Llave Pública:</strong> En Visual Studio Code, selecciona todo el contenido de la
-                    llave pública (debería comenzar con <code>ssh-rsa</code>) y cópiala al portapapeles.</li>
-            </ol>
-
-            <h3>4. Agregar la Llave Pública a tu Cuenta de GitHub</h3>
-            <p><strong>Descripción:</strong> Ahora dirígete a tu cuenta de GitHub. En la esquina superior derecha, haz
-                clic en tu foto de perfil y selecciona "Settings". Luego, en el menú de la izquierda, selecciona "SSH
-                and GPG keys". Haz clic en el botón "New SSH key", pega tu llave pública en el campo correspondiente y
-                haz clic en "Add SSH key".</p>
-
-            <h3>5. Probar la Conexión SSH</h3>
-            <p><strong>Descripción:</strong> Para asegurarte de que todo está funcionando correctamente, puedes probar
-                la conexión a GitHub usando el siguiente comando:</p>
-            <pre><code><span class="comment"># Probar la conexión SSH con GitHub</span>
-ssh -T git@github.com
-<span class="comment"># Si es la primera vez que te conectas, puede que te pregunte si quieres continuar, escribe "yes".</span>
-</code></pre>
-
-            <h3>6. Configurar Git para Usar SSH</h3>
-            <p><strong>Descripción:</strong> Finalmente, asegúrate de que Git esté configurado para usar SSH en lugar de
-                HTTPS. Esto se puede hacer configurando la URL remota de tu repositorio.</p>
-            <pre><code><span class="comment"># Cambiar la URL remota para usar SSH</span>
-git remote set-url origin git@github.com:usuario/repositorio.git
-</code></pre>
+        
+            <h2>Ejemplo Completo</h2>
+            <p>A continuación, te mostramos un ejemplo completo que combina los conceptos anteriores:</p>
+            <pre><code><span class="comment">// Declarar un array con nombres</span>
+        let nombres = ["Ana", "Juan", "Carlos", "Marta"];
+        
+        // Acceder a un elemento del array
+        console.log(nombres[1]); <span class="comment">// Juan</span>
+        
+        // Recorrer el array usando forEach
+        nombres.forEach(function(nombre) {
+            console.log(nombre);
+        });
+        
+        // Agregar elementos
+        nombres.push("Luis");
+        console.log(nombres); <span class="comment">// ["Ana", "Juan", "Carlos", "Marta", "Luis"]</span>
+        
+        nombres.unshift("Pedro");
+        console.log(nombres); <span class="comment">// ["Pedro", "Ana", "Juan", "Carlos", "Marta", "Luis"]</span>
+        
+        // Eliminar elementos
+        nombres.pop();
+        console.log(nombres); <span class="comment">// ["Pedro", "Ana", "Juan", "Carlos", "Marta"]</span>
+        
+        nombres.shift();
+        console.log(nombres); <span class="comment">// ["Ana", "Juan", "Carlos", "Marta"]</span>
+            </code></pre>
+        
             <hr>
+        
             <h2>Conclusión</h2>
-            <p>Configurar llaves SSH para tu cuenta de GitHub es un paso fundamental para mejorar la seguridad y la
-                eficiencia en tus proyectos de desarrollo. Al seguir estos pasos, puedes autenticarte de manera segura y
-                fácil en GitHub, lo que te permite enfocarte en lo que realmente importa: escribir código y colaborar
-                con otros.</p>
-
+            <p>Los arrays son fundamentales en JavaScript para manejar colecciones de datos. A lo largo de este capítulo, hemos aprendido cómo declarar arrays, acceder a sus elementos, recorrerlos y cómo agregar o eliminar elementos. Estas son habilidades esenciales para cualquier desarrollador web al trabajar con grandes cantidades de datos.</p>
         </section>
+        
         <section id="cont8">
-            <h1>Capítulo 8: Versionar un Proyecto Nuevo en un Repositorio Remoto Usando `git clone`</h1>
-
-            <h2>Introducción</h2>
-            <p>En este capítulo, aprenderemos a versionar un proyecto nuevo en un repositorio remoto en GitHub
-                utilizando el comando <code>git clone</code>. Este método es muy eficaz cuando deseas trabajar en un
-                proyecto que ya existe en GitHub, ya que te permite clonar el repositorio remoto en tu máquina local y
-                comenzar a hacer cambios de inmediato. A continuación, se describen los pasos necesarios para realizar
-                este proceso.</p>
+            <h1>Capítulo 8: Objetos en JavaScript</h1>
+        
+            <h2>¿Qué es un Objeto?</h2>
+            <p>Un objeto en JavaScript es una colección de propiedades y valores. Las propiedades son identificadores (como el nombre de un atributo), y los valores pueden ser cualquier tipo de dato (números, cadenas, arrays, funciones, etc.). Los objetos son útiles para representar entidades del mundo real, como una persona, un coche o un libro, y permiten organizar de manera más eficiente los datos relacionados.</p>
+        
             <hr>
-            <h2>Paso a Paso para Versionar un Proyecto Nuevo Usando `git clone`</h2>
-
-            <h3>1. Crear un Nuevo Repositorio en GitHub</h3>
-            <p><strong>Descripción:</strong> Antes de clonar un proyecto, primero asegúrate de tener un repositorio
-                vacío en GitHub que deseas utilizar.</p>
-            <ol>
-                <li>Inicia sesión en tu cuenta de GitHub.</li>
-                <li>Haz clic en el botón <strong>"New"</strong> en la parte superior derecha de la página.</li>
-                <li>Completa el formulario:
-                    <ul>
-                        <li><strong>Repository name:</strong> Elige un nombre para tu repositorio.</li>
-                        <li><strong>Description:</strong> Opcional, pero recomendable para explicar de qué se trata el
-                            proyecto.</li>
-                        <li>Selecciona si quieres que el repositorio sea público o privado.</li>
-                        <li>Desmarca la opción de inicializar el repositorio con un README.</li>
-                    </ul>
-                </li>
-                <li>Haz clic en <strong>"Create repository"</strong>.</li>
-            </ol>
-
-            <h3>2. Obtener la URL del Repositorio para Clonar</h3>
-            <p><strong>Descripción:</strong> Una vez creado el repositorio, necesitas obtener la URL para clonar el
-                repositorio en tu máquina local. Puedes elegir entre usar HTTPS o SSH:</p>
-            <ol>
-                <li>En la página del repositorio recién creado, encontrarás un botón que dice <strong>"Code"</strong>.
-                    Haz clic en él.</li>
-                <li>Verás dos opciones: <strong>HTTPS</strong> y <strong>SSH</strong>. Elige la que prefieras y copia la
-                    URL proporcionada.</li>
-            </ol>
-
-            <h3>3. Clonar el Repositorio en tu Máquina Local</h3>
-            <p><strong>Descripción:</strong> Utiliza el comando <code>git clone</code> para copiar el repositorio vacío
-                de GitHub en tu máquina local. Esto creará una copia completa del repositorio, incluyendo su historial
-                de cambios.</p>
-            <pre><code><span class="comment"># Clonar el repositorio vacío de GitHub (sustituye la URL)</span>
-git clone git@github.com:usuario/nombre-del-repositorio.git
-</code></pre>
-
-            <h3>4. Navegar al Directorio del Proyecto</h3>
-            <p><strong>Descripción:</strong> Una vez clonado el repositorio, navega al directorio del proyecto en tu
-                máquina local.</p>
-            <pre><code><span class="comment"># Navegar al directorio del proyecto</span>
-cd nombre-del-repositorio
-</code></pre>
-
-            <h3>5. Crear Archivos y Realizar Cambios</h3>
-            <p><strong>Descripción:</strong> Crea los archivos necesarios para tu proyecto y realiza cambios. Por
-                ejemplo, puedes crear un archivo <code>README.md</code> para describir tu proyecto.</p>
-            <pre><code><span class="comment"># Crear un archivo README</span>
-echo "# Mi Proyecto" >> README.md
-</code></pre>
-
-            <h3>6. Realizar Operaciones de Git</h3>
-            <p><strong>Descripción:</strong> Antes de subir tus cambios, puedes realizar varias operaciones de Git, como
-                verificar el estado del repositorio, agregar archivos al área de preparación y confirmar tus cambios:
-            </p>
-            <pre><code><span class="comment"># Verificar el estado del repositorio</span>
-git status
-<span class="comment"># Agregar todos los archivos al área de preparación</span>
-git add .
-<span class="comment"># Confirmar los cambios con un mensaje descriptivo</span>
-git commit -m "Primer commit: Agregar README.md"
-</code></pre>
-
-            <h3>7. Subir (Push) los Cambios al Repositorio Remoto</h3>
-            <p><strong>Descripción:</strong> Finalmente, puedes subir (push) tus cambios al repositorio remoto en
-                GitHub.</p>
-            <pre><code><span class="comment"># Subir los cambios al repositorio remoto</span>
-git push -u origin main
-</code></pre>
+        
+            <h2>Declaración de un Objeto</h2>
+            <p>Para declarar un objeto, utilizamos las llaves{}</>. Dentro de las llaves, se incluyen las propiedades y sus valores, separados por dos puntos:</code>, y las propiedades se separan por comas. A continuación, un ejemplo:</p>
+            <pre><code><span class="comment">// Declarar un objeto con propiedades</span>
+        let persona = {
+            nombre: "Juan",
+            edad: 30,
+            profesion: "Desarrollador"
+        };
+        console.log(persona); <span class="comment">// { nombre: "Juan", edad: 30, profesion: "Desarrollador" }</span>
+            </code></pre>
+        
+            <h2>Acceder a las Propiedades de un Objeto</h2>
+            <p>Existen dos formas principales de acceder a las propiedades de un objeto: usando la notación de punto o la notación de corchetes. A continuación, se muestran ambos métodos:</p>
+        
+            <h3>1. Notación de Punto</h3>
+            <pre><code><span class="comment">// Acceder a las propiedades con la notación de punto</span>
+        console.log(persona.nombre); <span class="comment">// "Juan"</span>
+        console.log(persona.edad); <span class="comment">// 30</span>
+            </code></pre>
+        
+            <h3>2. Notación de Corchetes</h3>
+            <pre><code><span class="comment">// Acceder a las propiedades con la notación de corchetes</span>
+        console.log(persona["nombre"]); <span class="comment">// "Juan"</span>
+        console.log(persona["edad"]); <span class="comment">// 30</span>
+            </code></pre>
+        
+            <h2>Agregar y Modificar Propiedades</h2>
+            <p>Podemos agregar nuevas propiedades a un objeto o modificar las propiedades existentes usando la notación de punto o corchetes.</p>
+        
+            <h3>1. Agregar o Modificar con la Notación de Punto</h3>
+            <pre><code><span class="comment">// Agregar una nueva propiedad</span>
+        persona.direccion = "Calle Falsa 123";
+        console.log(persona.direccion); <span class="comment">// "Calle Falsa 123"</span>
+        
+        <span class="comment">// Modificar una propiedad existente</span>
+        persona.edad = 31;
+        console.log(persona.edad); <span class="comment">// 31</span>
+            </code></pre>
+        
+            <h3>2. Agregar o Modificar con la Notación de Corchetes</h3>
+            <pre><code><span class="comment">// Agregar una nueva propiedad</span>
+        persona["telefono"] = "123-456-789";
+        console.log(persona["telefono"]); <span class="comment">// "123-456-789"</span>
+        
+        <span class="comment">// Modificar una propiedad existente</span>
+        persona["profesion"] = "Ingeniero de Software";
+        console.log(persona["profesion"]); <span class="comment">// "Ingeniero de Software"</span>
+            </code></pre>
+        
+            <h2>Recorrer un Objeto</h2>
+            <p>Para recorrer un objeto y acceder a sus propiedades y valores, se puede utilizar el ciclo <code>for...in</code>. Este ciclo recorre todas las propiedades de un objeto.</p>
+        
+            <pre><code><span class="comment">// Recorrer un objeto con for...in</span>
+        for (let propiedad in persona) {
+            console.log(propiedad + ": " + persona[propiedad]);
+        }
+            </code></pre>
+        
             <hr>
+        
+            <h2>Ejemplo Completo</h2>
+            <p>A continuación, te mostramos un ejemplo completo que combina los conceptos anteriores:</p>
+            <pre><code><span class="comment">// Declarar un objeto con propiedades</span>
+        let coche = {
+            marca: "Toyota",
+            modelo: "Corolla",
+            año: 2020,
+            color: "Rojo"
+        };
+        
+        // Acceder a propiedades con la notación de punto
+        console.log(coche.marca); <span class="comment">// "Toyota"</span>
+        
+        // Modificar una propiedad existente
+        coche.color = "Azul";
+        console.log(coche.color); <span class="comment">// "Azul"</span>
+        
+        // Agregar una nueva propiedad
+        coche.precio = 20000;
+        console.log(coche.precio); <span class="comment">// 20000</span>
+        
+        // Recorrer el objeto con for...in
+        for (let propiedad in coche) {
+            console.log(propiedad + ": " + coche[propiedad]);
+        }
+        // Imprime todas las propiedades y valores del objeto coche
+            </code></pre>
+        
+            <hr>
+        
             <h2>Conclusión</h2>
-            <p>Versionar un proyecto nuevo en un repositorio remoto en GitHub utilizando <code>git clone</code> es un
-                proceso simple y efectivo. Siguiendo estos pasos, puedes comenzar a trabajar en tu proyecto de inmediato
-                y asegurarte de que tu trabajo esté respaldado en la nube. Este enfoque es fundamental para el
-                desarrollo colaborativo y la gestión del código, permitiendo a los desarrolladores contribuir fácilmente
-                a proyectos compartidos.</p>
-
+            <p>Los objetos son una de las estructuras de datos más importantes en JavaScript. Permiten organizar los datos de manera eficiente y representar entidades complejas. A lo largo de este capítulo, hemos aprendido cómo crear objetos, acceder a sus propiedades, agregar o modificar propiedades, y recorrerlos utilizando ciclos. Estas habilidades son esenciales para trabajar con datos en JavaScript.</p>
         </section>
+        
         <section id="cont9">
             <h1>Capítulo 9: Versionar un Proyecto Existente en un Repositorio Remoto Usando `git remote add origin`</h1>
 
