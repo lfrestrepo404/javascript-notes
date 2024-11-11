@@ -1,51 +1,48 @@
-
 <img src="https://avatars.githubusercontent.com/u/112680688?v=4" width="60px" style="border-radius: 50">
-# Curso Git 2024 - Platzi
+# Curso JavaScript 2024 - Platzi - <a href="https://lfrestrepo404.github.io/cursogit/" target="_blank">Visitar Website</a>
 
-Este repositorio se utiliza para el curso profesional de Git ofrecido en Platzi. Aquí encontrarás mis apuntes y ejemplos prácticos que facilitan la comprensión de los conceptos esenciales de Git y GitHub.
+Este repositorio está diseñado para el curso profesional de JavaScript ofrecido en Platzi. Aquí encontrarás mis apuntes, ejemplos y ejercicios prácticos que facilitan la comprensión de los conceptos fundamentales de JavaScript.
 
 ## Descripción del Proyecto
 
-El objetivo de este proyecto es crear un sitio útil donde recopilar todos mis apuntes sobre Git. En lugar de un sitio genérico, he decidido enfocarme en los aspectos más relevantes del curso, haciendo que el contenido sea accesible y fácil de seguir.
+El objetivo de este proyecto es crear un sitio útil donde recopile todos mis apuntes sobre JavaScript. En lugar de un sitio genérico, me he enfocado en los temas más relevantes y esenciales del curso, proporcionando explicaciones claras, ejemplos y código que son fáciles de seguir para principiantes.
 
 ## Contenido del Repositorio
 
-A continuación, se presenta una lista de los temas abordados en mis apuntes:
+A continuación, se presenta una lista de los temas que cubro en mis apuntes:
 
-1. **Introducción a Git**
-   - Qué es Git y su importancia en el desarrollo de software.
-   - Instalación de Git y Git Bash en Windows.
+1. **Introducción a JavaScript**
+   - Qué es JavaScript y su importancia en el desarrollo web.
+   - ¿Por qué aprender JavaScript y cómo influye en el front-end y back-end?
 
-2. **Comandos Básicos de la Terminal**
-   - Uso de comandos esenciales como `pwd`, `cd`, `mkdir`, `ls`, `touch`, `cat`, entre otros.
+2. **Fundamentos de Programación**
+   - Conceptos básicos como variables, tipos de datos, operadores, y estructuras de control.
 
-3. **Uso Básico de Git Local**
-   - Comandos esenciales como `git init`, `git add`, `git commit`, `git status`, y más.
-   - Configuración de usuario y correo electrónico.
+3. **Variables, Constantes y Tipos de Datos**
+   - Explicación de los diferentes tipos de datos en JavaScript (string, number, boolean, null, undefined, object).
+   - Cómo trabajar con variables y constantes usando `let`, `const` y `var`.
 
-4. **Flujo de Git**
-   - Explicación de los estados de los archivos (untracked, staged, committed).
-   - Uso de `git checkout` para navegar entre commits.
+4. **Operadores**
+   - Operadores de asignación, comparación, aritméticos y lógicos con ejemplos prácticos.
 
-5. **Versionando Proyectos**
-   - Paso a paso para versionar un proyecto nuevo en un repositorio remoto utilizando `git clone`.
+5. **Estructuras de Control**
+   - Condicionales (`if`, `else if`, `else`, `switch case`).
+   - Bucles (`while`, `for`, `forEach`) con ejemplos de uso.
 
-6. **Versionando Proyectos Existentes**
-   - Cómo subir un proyecto ya versionado localmente a un repositorio remoto con `git remote add origin`.
+6. **Funciones en JavaScript**
+   - Definición, creación y uso de funciones en JavaScript.
+   - Explicación sobre cómo las funciones pueden ejecutarse en respuesta a eventos.
 
-7. **Tags y Versiones en GitHub**
-   - Introducción a los tags, su creación y eliminación.
+7. **Arrays y Estructuras de Datos**
+   - Definición y ejemplos de arrays.
+   - Métodos para recorrer, agregar y eliminar elementos en arrays.
 
-8. **Ramas en Repositorios Remotos**
-   - Explicación de las ramas principales: `main`, `develop`, `feature`, `hotfix`.
-   - Comandos para crear, listar y cambiar entre ramas.
-
-9. **Comandos de Git**
-   - Lista de comandos principales con definiciones y ejemplos.
+8. **Objetos en JavaScript**
+   - Definición de objetos, cómo acceder a sus propiedades y cómo manipularlos.
 
 ## Contribuciones
 
-Las contribuciones son bienvenidas. Si deseas contribuir a este repositorio, por favor sigue estos pasos:
+Las contribuciones son bienvenidas. Si deseas colaborar o agregar algo, por favor sigue estos pasos:
 
 1. Haz un fork del repositorio.
 2. Crea tu propia rama (`git checkout -b mi-rama`).
@@ -62,11 +59,10 @@ Puedes encontrarme y seguirme en:
 - **LinkedIn**: [LinkedIn](https://www.linkedin.com/in/luis-felipe-restrepo-aa5576188/)
 - **YouTube**: [YouTube](https://www.youtube.com/@codingnow404)
 - **Website Personal**: [Visita Mi Portafolio](https://felipe-restrepo.netlify.app/)
-- **Correo Electrónico**: [lfrestrepo004@gmail.com](lfrestrepo004@gmail.com)
+- **Correo Electrónico**: [lfrestrepo004@gmail.com](mailto:lfrestrepo004@gmail.com)
 
 ¡No dudes en contactarme para consultas, colaboraciones o simplemente para conectar!
 
-
 ---
 
-Espero que encuentres útil este repositorio mientras aprendes Git. ¡Feliz aprendizaje!
+Espero que encuentres útil este repositorio mientras aprendes JavaScript. ¡Feliz aprendizaje!
