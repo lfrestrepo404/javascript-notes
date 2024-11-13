@@ -278,3 +278,70 @@ const removeCountriePush = countries.pop()
 console.log(countries)
 const removeCountrieShift = countries.shift()
 console.log(countries)
+
+
+// Iteraciones con map y foreach
+
+/* Ambos métodos se utilizan para iterar sobre los elementos de un arreglo, pero tienen propósitos y comportamientos distintos.
+
+    forEach()
+Propósito: Ejecutar una función por cada elemento del arreglo, principalmente para realizar alguna acción o efecto secundario.
+Retorno: No devuelve un nuevo arreglo.
+Modificación del arreglo original: No modifica directamente el arreglo original, pero la función que se le pasa como argumento podría hacerlo.
+
+¡Claro! Con gusto te explico las diferencias entre map y forEach en JavaScript al recorrer un arreglo:
+
+map() vs. forEach() en JavaScript
+Ambos métodos se utilizan para iterar sobre los elementos de un arreglo, pero tienen propósitos y comportamientos distintos.
+
+forEach()
+Propósito: Ejecutar una función por cada elemento del arreglo, principalmente para realizar alguna acción o efecto secundario.
+Retorno: No devuelve un nuevo arreglo.
+Modificación del arreglo original: No modifica directamente el arreglo original, pero la función que se le pasa como argumento podría hacerlo.
+
+
+map()
+Propósito: Crear un nuevo arreglo aplicando una función a cada elemento del arreglo original.
+Retorno: Devuelve un nuevo arreglo con los resultados de la función aplicada a cada elemento.
+Modificación del arreglo original: No modifica el arreglo original.
+
+*/
+
+// Ej: Usar un map para crear un nuevo arreglo en el que a partir de una lista de numeros, me genere una lista de nuevos numeros elveados a la 2
+
+const numNormal = [2,3,4,5,6,7,8]
+const numDouble = numNormal.map(num=> num * 2)
+
+console.log(numNormal)
+console.log(numDouble)
+
+
+// Ej: usar un foreach para iterar cada elemento del array, pero sin generar un nuevo arreglo
+
+const numberss = [1, 2, 3, 4];
+
+numberss.forEach(number => {
+  console.log(number * 2); // Imprime el doble de cada número
+});
+
+
+//Ejemplo practico con map, convertir de farenheit a celcius
+
+const tempFarenheit = [31, 68, 95, 104]
+const tempCelcius = tempFarenheit.map(farenheit=>(5/9)* (farenheit-32) );
+
+console.log('Temperaturas en Farenheit: ', tempFarenheit);
+console.log('Temperaturas en Celcius: ', tempCelcius);
+
+
+//Ejmplo practico con Foreach, sumar los valores de un arreglo
+
+const newNumbers = [2,4,6,8,10,12,14,16]
+
+let sumaForeach = 0;
+
+newNumbers.forEach(number=>{
+    sumaForeach += number
+})
+
+console.log('Suma de los numeros:', sumaForeach)
