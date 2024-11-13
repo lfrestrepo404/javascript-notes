@@ -6,7 +6,7 @@
 
 :root {
     --primary-color: #f7e018;
-    --secondary-color: red;
+    --secondary-color: #e2e2e2;
 }
 
 body {
@@ -208,7 +208,7 @@ button:hover {
 
     h2 {
         font-size: 22px;
-        color: #8EB8E5;
+        color: #e2e2e2;
     }
 
     p,
@@ -220,7 +220,7 @@ button:hover {
 
     h3 {
         font-size: 18px;
-        color: #8EB8E5;
+        color: #e2e2e2;
     }
     
     section{
