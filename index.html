@@ -979,6 +979,127 @@ console.log(typeof colores); <span class="comment">// object (arrays son objetos
                 <li>Utiliza <code>map</code> cuando quieras transformar cada elemento y obtener un nuevo array con los resultados.</li>
             </ul>
         </section>
+
+        <section id="cont12">
+            <h1>Capítulo 12: Filtrado y Reducción con <code>filter()</code> y <code>reduce()</code></h1>
+        
+            <h2>Introducción a <code>filter()</code> y <code>reduce()</code></h2>
+            <p>En JavaScript, <code>filter()</code> y <code>reduce()</code> son métodos fundamentales para trabajar con arreglos:</p>
+            <ul>
+                <li><strong><code>filter()</code></strong>: Crea un nuevo arreglo que contiene solo los elementos del arreglo original que cumplen con una condición específica.</li>
+                <li><strong><code>reduce()</code></strong>: Combina los elementos del arreglo en un solo valor, acumulando un resultado a lo largo de todas las iteraciones.</li>
+            </ul>
+        
+            <hr>
+        
+            <h2>Filtrado de Arreglos con <code>filter()</code></h2>
+            <p>El método <code>filter()</code> permite seleccionar elementos de un arreglo que cumplen con una condición. Devuelve un nuevo arreglo con estos elementos, sin modificar el arreglo original.</p>
+        
+            <h3>Ejemplo: Filtrar Números Pares</h3>
+            <pre><code><span class="comment">// Declaramos un array de números</span>
+        const numerosList = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+        
+        <span class="comment">// Usamos filter para seleccionar los números pares</span>
+        const numerosPares = numerosList.filter(numero => numero % 2 === 0);
+        
+        console.log(numerosPares); <span class="comment">// Output: [2, 4, 6, 8, 10, 12, 14]</span>
+            </code></pre>
+        
+            <h3>Ejemplo: Filtrar Números Mayores a un Valor</h3>
+            <pre><code><span class="comment">// Filtrar números mayores a 8</span>
+        const mayoresQueOcho = numerosList.filter(numero => numero > 8);
+        
+        console.log(mayoresQueOcho); <span class="comment">// Output: [9, 10, 11, 12, 13, 14, 15]</span>
+            </code></pre>
+        
+            <h3>Resumen de <code>filter()</code></h3>
+            <p><code>filter()</code> es ideal para crear una versión "filtrada" del arreglo original, manteniendo solo los elementos que cumplen con una condición.</p>
+        
+            <hr>
+        
+            <h2>Reducción de Arreglos con <code>reduce()</code></h2>
+            <p>El método <code>reduce()</code> permite acumular un valor a partir de todos los elementos de un arreglo, ejecutando una función para cada elemento. Este método es útil para sumar, contar o combinar los valores de un arreglo en uno solo.</p>
+        
+            <h3>Ejemplo: Suma de Números en un Arreglo</h3>
+            <pre><code><span class="comment">// Declaramos un array de números</span>
+        const numerosListado = [1, 2, 3, 4, 5];
+        
+        <span class="comment">// Usamos reduce para calcular la suma total</span>
+        const sumaTotal = numerosListado.reduce((acumulador, numero) => acumulador + numero, 0);
+        
+        console.log(sumaTotal); <span class="comment">// Output: 15</span>
+            </code></pre>
+        
+            <h3>Ejemplo: Contar Frecuencia de Palabras</h3>
+            <pre><code><span class="comment">// Declaramos un array de palabras con algunas repetidas</span>
+        const words = ['Hola', 'Felipe', 'Mouse', 'Teclado', 'Pc', 'Hola', 'Pantalla', 'Hola'];
+        
+        <span class="comment">// Usamos reduce para contar la frecuencia de cada palabra</span>
+        const wordFrecuency = words.reduce((acumulador, currentValue) => {
+            if (acumulador[currentValue]) {
+                acumulador[currentValue]++;
+            } else {
+                acumulador[currentValue] = 1;
+            }
+            return acumulador;
+        }, {});
+        
+        console.log(wordFrecuency); <span class="comment">// Output: { Hola: 3, Felipe: 1, Mouse: 1, Teclado: 1, Pc: 1, Pantalla: 1 }</span>
+            </code></pre>
+        
+            <h3>Ejemplo: Encontrar el Número Máximo</h3>
+            <pre><code><span class="comment">// Declaramos un array de números</span>
+        const numerosMax = [3, 6, 2, 12, 5, 9];
+        
+        <span class="comment">// Usamos reduce para encontrar el número máximo</span>
+        const maximo = numerosMax.reduce((acumulador, numero) => Math.max(acumulador, numero), numerosMax[0]);
+        
+        console.log(maximo); <span class="comment">// Output: 12</span>
+            </code></pre>
+        
+            <h3>Resumen de <code>reduce()</code></h3>
+            <p><code>reduce()</code> es útil para realizar operaciones acumulativas o de combinación de valores en un arreglo, como calcular una suma, contar ocurrencias o encontrar el máximo.</p>
+        
+            <hr>
+        
+            <h2>Comparación entre <code>filter()</code> y <code>reduce()</code></h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Aspecto</th>
+                        <th><code>filter()</code></th>
+                        <th><code>reduce()</code></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Propósito</td>
+                        <td>Filtrar elementos que cumplen una condición.</td>
+                        <td>Acumular o combinar todos los elementos en un único valor.</td>
+                    </tr>
+                    <tr>
+                        <td>Retorno</td>
+                        <td>Devuelve un nuevo arreglo con los elementos que cumplen la condición.</td>
+                        <td>Devuelve un valor único.</td>
+                    </tr>
+                    <tr>
+                        <td>Modificación del Array Original</td>
+                        <td>No modifica el arreglo original.</td>
+                        <td>No modifica el arreglo original.</td>
+                    </tr>
+                </tbody>
+            </table>
+        
+            <hr>
+        
+            <h2>Conclusión</h2>
+            <p><code>filter()</code> y <code>reduce()</code> son métodos potentes para manipular datos en JavaScript:</p>
+            <ul>
+                <li>Utiliza <code>filter()</code> para crear un arreglo reducido a los elementos que cumplen una condición.</li>
+                <li>Utiliza <code>reduce()</code> para transformar un arreglo en un valor acumulado o resumen, como una suma, un objeto de conteo o un valor máximo.</li>
+            </ul>
+        </section>
+        
         
         
         
@@ -1001,6 +1122,8 @@ console.log(typeof colores); <span class="comment">// object (arrays son objetos
                 <li><button id="cap9">Capítulo 9: Contexto de Ejecución y Scope Chain</button></li>
                 <li><button id="cap10">Capítulo 10: Mutabilidad e Inmutabilidad en Arrays</button></li>
                 <li><button id="cap11">Capítulo 11: Iteraciones con Map y Foreach</button></li>
+                <li><button id="cap12">Capítulo 12:Filtrado y Reducción con filter() y reduce()</button></li>
+
             </ul>
             
         </div>

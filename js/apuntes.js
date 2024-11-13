@@ -1,13 +1,13 @@
-let fichaNumber= 2392926
+let fichaNumber = 2392926
 const nombreInst = 'Felipe'
 console.log(fichaNumber, nombreInst)
 
 var familia = {
-    Mamita : 'Laura Daniela',
-    Papito: 'Luis Felipe',
-    Bebe: 'Isabella',
-    Gatito: 'Aslan',
-    Gatita: 'Chloe'
+  Mamita: 'Laura Daniela',
+  Papito: 'Luis Felipe',
+  Bebe: 'Isabella',
+  Gatito: 'Aslan',
+  Gatita: 'Chloe'
 }
 
 //  PRIMITIVOS
@@ -21,19 +21,19 @@ let indefinido = undefined  //Indefinido
 // COMPLEJOS
 
 //Objeto - Object
-let ficha ={        
-    numero: 2692926,
-    vocero: 'pepito',
-    naprendices: 28,
-    programa: 'ADSO',
-    etapalectiva: false
+let ficha = {
+  numero: 2692926,
+  vocero: 'pepito',
+  naprendices: 28,
+  programa: 'ADSO',
+  etapalectiva: false
 }
 
 //Arreglo - Array
-let frutas = ['Manzana', 'Pera', 'Uva', 'Melon']  
+let frutas = ['Manzana', 'Pera', 'Uva', 'Melon']
 
 // function
-function saludar () {}
+function saludar() { }
 
 // Operadores de Comparacion
 
@@ -82,8 +82,8 @@ console.log(raizCuadrada, valorAbsoluto, aleatorio)
 
 // Type Casting Explicito
 
-const texto= '30'
-const numero= parseInt(texto)
+const texto = '30'
+const numero = parseInt(texto)
 
 console.log(numero)
 console.log(typeof texto)
@@ -110,23 +110,23 @@ console.log(sum)
 
 // El bucle for es el bucle tradicional en JavaScript y es útil cuando sabes la cantidad exacta de veces que quieres repetir una acción. Tienes que definir tres partes: inicialización, condición, y actualización del índice.
 for (inicialización; condición; actualización) {
-    // Código a ejecutar en cada iteración
+  // Código a ejecutar en cada iteración
 }
 
 for (let i = 0; i < 5; i++) {
-    console.log("El valor de i es: " + i);
-  }
-  // Output:
-  // El valor de i es: 0
-  // El valor de i es: 1
-  // El valor de i es: 2
-  // El valor de i es: 3
-  // El valor de i es: 4
+  console.log("El valor de i es: " + i);
+}
+// Output:
+// El valor de i es: 0
+// El valor de i es: 1
+// El valor de i es: 2
+// El valor de i es: 3
+// El valor de i es: 4
 
 //   for...of recorre los valores de objetos iterables como arrays, strings, mapas y conjuntos (Map, Set). A diferencia de for...in, for...of accede directamente al valor, lo cual es útil para trabajar directamente con los elementos sin preocuparte de los índices.
 
 for (let valor of iterable) {
-    // Código a ejecutar en cada iteración
+  // Código a ejecutar en cada iteración
 }
 
 const frutass = ["manzana", "banana", "pera"];
@@ -154,7 +154,7 @@ for (let letra of textos) {
 // for...in recorre las propiedades de un objeto o los índices de un array. Es útil para iterar sobre propiedades de un objeto o claves de un array, pero no sobre los valores directamente.
 
 for (let propiedad in objeto) {
-    // Código a ejecutar en cada iteración
+  // Código a ejecutar en cada iteración
 }
 
 const persona = { nombre: "Juan", edad: 30, ciudad: "Madrid" };
@@ -202,16 +202,16 @@ console.log(deportes)
 //Arrays Mixtos
 
 const adso = [
-    'SENA',
-    '27 Meses',
-    'Tecnólogo',
-    {
-        lectiva: '21 Meses',
-        productiva: '6 meses',
-        requisitos: ['Bachiller', 'Presentación Icfes', 'Disponibilidad de tiempo'],
-        homologacion: 'Ingenieria de software',
-        tarjetProfesional: true
-    }
+  'SENA',
+  '27 Meses',
+  'Tecnólogo',
+  {
+    lectiva: '21 Meses',
+    productiva: '6 meses',
+    requisitos: ['Bachiller', 'Presentación Icfes', 'Disponibilidad de tiempo'],
+    homologacion: 'Ingenieria de software',
+    tarjetProfesional: true
+  }
 ]
 
 console.log(adso)
@@ -250,12 +250,12 @@ console.log(adsoSena)
 
 //Ejercicio práctico con arrays y su longitud
 
-const numbersArray = [2,4,6,8,10]
+const numbersArray = [2, 4, 6, 8, 10]
 
 let sumaArray = 0;
 
-for (let i = 0; i < numbersArray.length; i++){
-    sumaArray += numbersArray[i]
+for (let i = 0; i < numbersArray.length; i++) {
+  sumaArray += numbersArray[i]
 }
 
 console.log(sumaArray)
@@ -267,8 +267,8 @@ y shift(Elimina elementos al principio de un array) o pop (el cual elimina el ul
 */
 
 const countries = ['COL', 'ARG', 'MEX']
-const newContries = countries.push('CL','PER');
-const newConstriesTwo = countries.unshift('BRA', 'BOL','VEN')
+const newContries = countries.push('CL', 'PER');
+const newConstriesTwo = countries.unshift('BRA', 'BOL', 'VEN')
 
 console.log(countries)
 console.log(newContries)
@@ -300,7 +300,7 @@ Modificación del arreglo original: No modifica el arreglo original.
 
 // Ej: Usar un map para crear un nuevo arreglo en el que a partir de una lista de numeros, me genere una lista de nuevos numeros elveados a la 2
 
-const numNormal = [2,3,4,5,6,7,8]
+const numNormal = [2, 3, 4, 5, 6, 7, 8]
 const numDouble = numNormal.map(num => num * 2)
 
 console.log(numNormal)
@@ -319,7 +319,7 @@ numberss.forEach(number => {
 //Ejemplo practico con map, convertir de farenheit a celcius
 
 const tempFarenheit = [31, 68, 95, 104]
-const tempCelcius = tempFarenheit.map(farenheit=>(5/9)* (farenheit-32) );
+const tempCelcius = tempFarenheit.map(farenheit => (5 / 9) * (farenheit - 32));
 
 console.log('Temperaturas en Farenheit: ', tempFarenheit);
 console.log('Temperaturas en Celcius: ', tempCelcius);
@@ -327,12 +327,99 @@ console.log('Temperaturas en Celcius: ', tempCelcius);
 
 //Ejmplo practico con Foreach, sumar los valores de un arreglo
 
-const newNumbers = [2,4,6,8,10,12,14,16]
+const newNumbers = [2, 4, 6, 8, 10, 12, 14, 16]
 
 let sumaForeach = 0;
 
-newNumbers.forEach(number=>{
-    sumaForeach += number
+newNumbers.forEach(number => {
+  sumaForeach += number
 })
 
 console.log('Suma de los numeros:', sumaForeach)
+
+
+
+
+
+
+
+
+/* Filtrado y Reducción con filter() y Reduce()  dos herramientas poderosas para manipular y transformar arreglos.
+
+Filtrado con filter()
+El método filter() se utiliza para crear un nuevo arreglo a partir de un arreglo existente, pero incluyendo solo aquellos elementos que cumplan una determinada condición. Es como pasar un arreglo por un filtro para seleccionar solo los elementos que nos interesan.
+
+*/
+
+
+
+const numerosList = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+// 1. Se crea un array llamado 'numerosList' y se le asignan los números del 1 al 15.
+
+const numerosPares = numerosList.filter(numero => numero % 2 === 0);
+// 2. Se crea un nuevo array llamado 'numerosPares':
+//   - `numerosList.filter()`: Se aplica el método 'filter' al array 'numerosList' para filtrar los elementos.
+//   - `numero => numero % 2 === 0`: Esta es una función de flecha que se pasa como argumento a 'filter'. 
+//     - `numero`: Representa cada elemento del array 'numerosList' en cada iteración.
+//     - `numero % 2 === 0`: Esta expresión verifica si el número es par (el resto de la división entre 2 es 0).
+//     - Si la condición es verdadera, el número se incluye en el nuevo array 'numerosPares'.
+
+console.log(numerosPares); // Imprimirá: [2, 4, 6]
+// 3. Se imprime en la consola el contenido del array 'numerosPares', que ahora contiene solo los números pares del array original.
+
+/*
+Reducción con reduce()
+El método reduce() se utiliza para reducir un arreglo a un único valor. Es como aplicar una operación a todos los elementos del arreglo y obtener un resultado final.
+
+*/
+
+
+const numerosListado = [1, 2, 3, 4, 5];
+// 1. **Declaración del array:** Se crea un array llamado `numerosListado` y se le asignan los números del 1 al 5. Este array será nuestra fuente de datos para la operación de suma.
+
+const sumaTotal = numerosListado.reduce((acumulador, numero) => acumulador + numero, 0);
+// 2. **Cálculo de la suma total:**
+//   - `numerosListado.reduce()`: Se aplica el método `reduce()` al array `numerosListado`. Este método itera sobre cada elemento del array y acumula un valor.
+//   - `(acumulador, numero) => acumulador + numero`: Esta es una función flecha que se pasa como argumento a `reduce()`.
+//     - `acumulador`: Representa el valor acumulado en cada iteración. Inicialmente, este valor es 0 (especificado en el tercer argumento de `reduce()`).
+//     - `numero`: Representa el elemento actual del array durante cada iteración.
+//     - `acumulador + numero`: En cada iteración, se suma el valor actual del `numero` al `acumulador` y el resultado se asigna al nuevo `acumulador` para la siguiente iteración.
+//   - `0`: Este es el valor inicial del `acumulador`. Es decir, antes de comenzar a iterar sobre el array, el `acumulador` tiene un valor de 0.
+
+console.log(sumaTotal); 
+// 3. **Impresión del resultado:** 
+//   - Se imprime en la consola el valor final de `sumaTotal`, que representa la suma de todos los números del array `numerosListado`.
+
+
+//Reduce segundo ejemplo
+
+
+
+// console.log(wordFrecuency)
+
+const words = ['Hola', 'Felipe', 'Mouse', 'Teclado', 'Pc', 'Hola', 'Pantalla', 'Hola'];
+// 1. **Declaración del arreglo:**
+//    Se crea un arreglo llamado `words` que contiene una lista de palabras, incluyendo algunas repetidas.
+
+const wordFrecuency = words.reduce((acumulador, currentValue) => {
+    if (acumulador[currentValue]) {
+        acumulador[currentValue]++
+    } else {
+        acumulador[currentValue] = 1
+    }
+
+    return acumulador
+}, {});
+// 2. **Cálculo de la frecuencia de palabras:**
+//    - `words.reduce()`: Se aplica el método `reduce()` al arreglo `words` para reducirlo a un único valor, que en este caso será un objeto que cuenta la frecuencia de cada palabra.
+//    - `(acumulador, currentValue) => {...}`: Esta es una función flecha que se pasa como argumento a `reduce()`.
+//      - `acumulador`: Este será un objeto que se irá construyendo en cada iteración. Las propiedades de este objeto serán las palabras y los valores serán la cantidad de veces que aparece cada palabra.
+//      - `currentValue`: Representa la palabra actual en cada iteración del arreglo.
+//    - `if (acumulador[currentValue]) { ... }`: Si la palabra actual ya existe como propiedad en el objeto `acumulador`, significa que ya la hemos encontrado antes, por lo que incrementamos su contador en 1.
+//    - `else { ... }`: Si la palabra actual no existe como propiedad en el objeto `acumulador`, la agregamos al objeto y le asignamos un valor de 1, indicando que la hemos encontrado por primera vez.
+//    - `return acumulador`: Devolvemos el objeto `acumulador` actualizado en cada iteración.
+//    - `{}`: Este es el valor inicial del acumulador. Al ser un objeto vacío, indica que al principio no tenemos ninguna palabra contada.
+
+console.log(wordFrecuency);
+// 3. **Impresión del resultado:**
+//    Se imprime en la consola el objeto `wordFrecuency`, que ahora contiene un conteo de cuántas veces aparece cada palabra en el arreglo original.
