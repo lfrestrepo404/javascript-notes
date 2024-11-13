@@ -386,7 +386,7 @@ const sumaTotal = numerosListado.reduce((acumulador, numero) => acumulador + num
 //     - `acumulador + numero`: En cada iteración, se suma el valor actual del `numero` al `acumulador` y el resultado se asigna al nuevo `acumulador` para la siguiente iteración.
 //   - `0`: Este es el valor inicial del `acumulador`. Es decir, antes de comenzar a iterar sobre el array, el `acumulador` tiene un valor de 0.
 
-console.log(sumaTotal); 
+console.log(sumaTotal);
 // 3. **Impresión del resultado:** 
 //   - Se imprime en la consola el valor final de `sumaTotal`, que representa la suma de todos los números del array `numerosListado`.
 
@@ -402,13 +402,13 @@ const words = ['Hola', 'Felipe', 'Mouse', 'Teclado', 'Pc', 'Hola', 'Pantalla', '
 //    Se crea un arreglo llamado `words` que contiene una lista de palabras, incluyendo algunas repetidas.
 
 const wordFrecuency = words.reduce((acumulador, currentValue) => {
-    if (acumulador[currentValue]) {
-        acumulador[currentValue]++
-    } else {
-        acumulador[currentValue] = 1
-    }
+  if (acumulador[currentValue]) {
+    acumulador[currentValue]++
+  } else {
+    acumulador[currentValue] = 1
+  }
 
-    return acumulador
+  return acumulador
 }, {});
 // 2. **Cálculo de la frecuencia de palabras:**
 //    - `words.reduce()`: Se aplica el método `reduce()` al arreglo `words` para reducirlo a un único valor, que en este caso será un objeto que cuenta la frecuencia de cada palabra.
@@ -423,3 +423,185 @@ const wordFrecuency = words.reduce((acumulador, currentValue) => {
 console.log(wordFrecuency);
 // 3. **Impresión del resultado:**
 //    Se imprime en la consola el objeto `wordFrecuency`, que ahora contiene un conteo de cuántas veces aparece cada palabra en el arreglo original.
+
+
+
+/*
+
+¿Qué es slice()?
+
+slice() es un método que se utiliza tanto en cadenas de texto (strings) como en arreglos. Su función principal es extraer una porción de un conjunto de datos (ya sea una cadena o un arreglo) y crear una nueva copia de esa porción, sin modificar el conjunto original.
+
+*/
+
+
+const saludos = "Hola, mundo!";
+const subcadena = saludos.slice(2, 5); // Extrae desde el índice 2 (la 'l') hasta el índice 4 ('a')
+console.log(subcadena); // Imprimirá: "la,"
+
+const numbs = [1, 2, 3, 4, 5];
+const nuevosNumeros = numbs.slice(1, 3); // Extrae desde el índice 1 (el 2) hasta el índice 2 (el 3, sin incluirlo)
+console.log(nuevosNumeros); // Imprimirá: [2, 3]
+
+const nuevosNumeross = numbs.slice(-2); // Extrae desde el índice 1 (el 2) hasta el índice 2 (el 3, sin incluirlo)
+console.log(nuevosNumeross); // Imprimirá: [2, 3]
+
+
+/*
+spread operator
+
+Qué es el operador de dispersión?
+Es una sintaxis introducida en ECMAScript 6 (ES6) que se representa con tres puntos suspensivos (...) y te permite "expandir" los elementos de un iterable (como un array o un string) en lugares donde se esperan múltiples argumentos o elementos.
+
+Imagina que tienes una bolsa de frutas y quieres sacar todas las frutas de golpe sobre la mesa. El operador de dispersión sería como abrir la bolsa y esparcir todas las frutas.
+
+¿Para qué se usa?
+Copiar arrays:
+
+*/
+
+const numbersss = [1, 2, 3];
+const copiaNumeros = [...numbersss];
+
+console.log(numbersss)
+console.log(copiaNumeros)
+
+//Concatenar arrays:
+
+const array1 = [1, 2];
+const array2 = [3, 4];
+const arrayCombinado = [...array1, ...array2];
+
+console.log(arrayCombinado)
+
+
+const peliculas = ['Deadpool', 'Fast ans furios', 'Kings of lords', 'Harry Potter']
+
+const pelis2024 = [...peliculas, 'Deadpool3', 'Intensamente', 'La substancia']
+
+console.log(pelis2024)
+
+
+//---------------------------------------------
+
+/* Introducción en programación orientada a objetos
+
+
+  ¿Qué es un objeto en JavaScript?
+Un objeto en JavaScript es una colección de propiedades y métodos. Imagina un objeto como una representación de una entidad del mundo real, como una persona, un coche o un libro. Cada objeto tiene sus propias características (propiedades) y acciones que puede realizar (métodos).
+
+Propiedades
+Las propiedades son las características de un objeto. Son como los adjetivos que describen a una persona. Por ejemplo, si tenemos un objeto que representa a una persona, sus propiedades podrían ser:
+
+nombre: "Juan"
+edad: 30
+altura: 1.75
+
+
+Métodos
+Los métodos son las acciones que un objeto puede realizar. Son como los verbos que describen lo que una persona puede hacer. En el ejemplo de la persona, los métodos podrían ser:
+
+hablar(): Imprime un mensaje en la consola.
+caminar(): Simula el acto de caminar.
+
+Anatomía de un objeto
+Un objeto en JavaScript se define utilizando llaves {}. Dentro de las llaves, se enumeran las propiedades y métodos del objeto, separados por comas.
+
+*/
+
+// Creando un objeto que representa a una persona
+const men = {
+  //Propiedades y valor
+  nombre: "Felipe",
+  genero: "Masculino",
+  edad: 27,
+  estatura: 1.79,
+  //Método
+  saludar() {
+    console.log("Hola, mi nombre es " + this.nombre + " y soy Ingeniero de Software");
+  },
+  soltero: true
+};
+
+console.log(men)
+men.saludar();
+
+
+/*
+
+Agregando nuevas propiedades a un objeto
+
+1. Asignación directa:
+Esta es la forma más común y directa de agregar una nueva propiedad a un objeto existente. Simplemente usas la notación de punto o corchetes para acceder a la nueva propiedad y asignarle un valor.
+*/
+
+men.apellido = "Restrepo";
+men.ciudad = "Bogota";
+console.log(men)
+
+/*
+2. Usando Object.assign():
+El método Object.assign() te permite copiar propiedades de un objeto a otro. Puedes usarlo para agregar nuevas propiedades a un objeto existente:
+*/
+
+const nuevasPropiedaes = {
+  telefono: 3212439492,
+  email: 'lfrestrepo004@gmail.com',
+  youtube: '@codingnow404'
+}
+
+Object.assign(men, nuevasPropiedaes)
+
+console.log(men)
+
+
+/*
+  Tambien podemos agregar metodos a funciones ya creadas
+ */
+
+men.despedir = function () {
+  console.log("Esto fue todo por mi primer ejercicio con objetos")
+}
+console.log(men)
+
+men.despedir();
+
+
+/*
+  Tambien podemos borrar propiedades y metodos con la instruccion delete
+
+*/
+
+delete men.telefono;
+delete men.despedir;
+console.log(men)
+
+//.-------------------------------------------------------------.
+
+/*
+Programación orientada a objetos:
+Funciones Constructoras en JavaScript
+Una función constructora es una función especial en JavaScript que se utiliza para crear objetos. En lugar de crear objetos individualmente, con una función constructora puedes crear múltiples objetos con la misma estructura de manera más eficiente y organizada.
+
+¿Cómo funciona?
+Definición: Se define una función normal, pero se acostumbra a nombrarla con la primera letra en mayúscula para diferenciarla de otras funciones.
+Uso de this: Dentro de la función, la palabra clave this se refiere al nuevo objeto que se está creando. Las propiedades y métodos se asignan a this.
+Creación de objetos: Para crear un nuevo objeto a partir de la función constructora, se utiliza la palabra clave new seguida del nombre de la función.
+
+*/
+
+function People(nombre, edad) {
+  this.nombre = nombre;
+  this.edad = edad;
+  this.saludar = function() {
+    console.log("Hola, mi nombre es " + this.nombre);
+  };
+}
+
+// Creando objetos a partir de la función constructora (Instancias)
+const persona1 = new People("Juan", 30);
+const persona2 = new People("Ana", 25);
+
+// Accediendo a propiedades y métodos
+console.log(persona1.nombre); // Imprime: Juan
+persona2.saludar(); // Imprime: Hola, mi nombre es Ana

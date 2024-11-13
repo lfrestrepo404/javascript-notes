@@ -237,7 +237,6 @@ console.log(typeof colores); <span class="comment">// object (arrays son objetos
             <h2>Conclusión</h2>
             <p>Las variables, constantes y tipos de datos son conceptos esenciales en JavaScript y cualquier otro lenguaje de programación. Entender cómo almacenarlos y manejarlos correctamente es clave para estructurar y manipular información en un programa. La concatenación de variables permite combinar valores de distintos tipos para crear mensajes informativos y legibles.</p>
         </section>
-        
 
         <section id="cont4">
             
@@ -1099,9 +1098,350 @@ console.log(typeof colores); <span class="comment">// object (arrays son objetos
                 <li>Utiliza <code>reduce()</code> para transformar un arreglo en un valor acumulado o resumen, como una suma, un objeto de conteo o un valor máximo.</li>
             </ul>
         </section>
+
+        <section id="cont13">
+            <h1>Capítulo 13: Métodos de Extracción y Expansión: <code>slice()</code> y el Spread Operator</h1>
+        
+            <h2>Introducción a <code>slice()</code> y al Spread Operator</h2>
+            <p>En JavaScript, existen métodos y operadores útiles para trabajar con datos. Dos de los más importantes son <code>slice()</code>, que permite extraer partes de arreglos o cadenas, y el Spread Operator (<code>...</code>), que permite "expandir" elementos de un arreglo o cadena.</p>
+        
+            <hr>
+        
+            <h2><code>slice()</code>: Extracción de Partes de Cadenas y Arreglos</h2>
+            <p>El método <code>slice()</code> se utiliza para extraer una porción de un conjunto de datos, como una cadena o un arreglo. No modifica el conjunto original, sino que devuelve una copia de la parte seleccionada.</p>
+        
+            <h3>Sintaxis de <code>slice()</code></h3>
+            <p><code>slice(inicio, fin)</code></p>
+            <ul>
+                <li><strong><code>inicio</code></strong>: Es el índice desde donde comienza la extracción (incluido).</li>
+                <li><strong><code>fin</code></strong>: Es el índice donde termina la extracción (excluido).</li>
+            </ul>
+            <p>Si se omite <code>fin</code>, <code>slice()</code> extraerá hasta el final de la cadena o el arreglo.</p>
+        
+            <h3>Ejemplos con <code>slice()</code></h3>
+        
+            <h4>Ejemplo 1: Extracción en Cadenas de Texto</h4>
+            <pre><code><span class="comment">// Declaramos una cadena de texto</span>
+        const saludos = "Hola, mundo!";
+        
+        <span class="comment">// Extraemos desde el índice 2 hasta el índice 5 (excluido)</span>
+        const subcadena = saludos.slice(2, 5);
+        
+        console.log(subcadena); <span class="comment">// Output: "la,"</span>
+            </code></pre>
+        
+            <h4>Ejemplo 2: Extracción en Arreglos</h4>
+            <pre><code><span class="comment">// Declaramos un arreglo de números</span>
+        const numbs = [1, 2, 3, 4, 5];
+        
+        <span class="comment">// Extraemos desde el índice 1 hasta el índice 3 (excluido)</span>
+        const nuevosNumeros = numbs.slice(1, 3);
+        
+        console.log(nuevosNumeros); <span class="comment">// Output: [2, 3]</span>
+            </code></pre>
+        
+            <h4>Ejemplo 3: Uso de Índices Negativos en <code>slice()</code></h4>
+            <p>Cuando se utilizan índices negativos, <code>slice()</code> empieza a contar desde el final del arreglo.</p>
+            <pre><code><span class="comment">// Extrae los últimos dos elementos del arreglo</span>
+        const nuevosNumerosNeg = numbs.slice(-2);
+        
+        console.log(nuevosNumerosNeg); <span class="comment">// Output: [4, 5]</span>
+            </code></pre>
+        
+            <h3>Resumen de <code>slice()</code></h3>
+            <p><code>slice()</code> es útil para crear copias de partes de arreglos o cadenas sin modificar el conjunto de datos original.</p>
+        
+            <hr>
+        
+            <h2>Spread Operator (<code>...</code>): Expansión de Arreglos y Cadenas</h2>
+            <p>El Spread Operator, representado por <code>...</code>, permite expandir los elementos de un iterable, como un arreglo o una cadena. Fue introducido en ES6 y ofrece una forma eficiente y expresiva de copiar y combinar datos.</p>
+        
+            <h3>¿Para qué se usa el Spread Operator?</h3>
+            <ul>
+                <li><strong>Copiar arreglos o cadenas:</strong> Puedes crear una copia exacta de un arreglo o cadena sin modificar el original.</li>
+                <li><strong>Concatenar arreglos:</strong> Permite combinar varios arreglos en uno solo.</li>
+                <li><strong>Pasar argumentos:</strong> Permite pasar elementos individuales de un arreglo como argumentos a una función.</li>
+            </ul>
+        
+            <h3>Ejemplos con el Spread Operator</h3>
+        
+            <h4>Ejemplo 1: Copiar un Arreglo</h4>
+            <pre><code><span class="comment">// Declaramos un arreglo de números</span>
+        const numbers = [1, 2, 3];
+        
+        <span class="comment">// Creamos una copia del arreglo usando el Spread Operator</span>
+        const copiaNumeros = [...numbers];
+        
+        console.log(numbers); <span class="comment">// Output: [1, 2, 3]</span>
+        console.log(copiaNumeros); <span class="comment">// Output: [1, 2, 3]</span>
+            </code></pre>
+        
+            <h4>Ejemplo 2: Concatenar Arreglos</h4>
+            <pre><code><span class="comment">// Declaramos dos arreglos de números</span>
+        const array1 = [1, 2];
+        const array2 = [3, 4];
+        
+        <span class="comment">// Combinamos ambos arreglos en uno solo</span>
+        const arrayCombinado = [...array1, ...array2];
+        
+        console.log(arrayCombinado); <span class="comment">// Output: [1, 2, 3, 4]</span>
+            </code></pre>
+        
+            <h4>Ejemplo 3: Añadir Elementos a un Arreglo</h4>
+            <pre><code><span class="comment">// Declaramos un arreglo de películas</span>
+        const peliculas = ['Deadpool', 'Fast and Furious', 'Kings of Lords', 'Harry Potter'];
+        
+        <span class="comment">// Creamos un nuevo arreglo con películas adicionales</span>
+        const pelis2024 = [...peliculas, 'Deadpool 3', 'Intensamente', 'La Sustancia'];
+        
+        console.log(pelis2024); <span class="comment">// Output: ['Deadpool', 'Fast and Furious', 'Kings of Lords', 'Harry Potter', 'Deadpool 3', 'Intensamente', 'La Sustancia']</span>
+            </code></pre>
+        
+            <h3>Resumen del Spread Operator</h3>
+            <p>El Spread Operator permite trabajar con datos en una forma expansiva y flexible, facilitando operaciones como copiado, concatenación, y la inclusión de elementos adicionales en arreglos.</p>
+        
+            <hr>
+        
+            <h2>Comparación entre <code>slice()</code> y el Spread Operator</code></h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Aspecto</th>
+                        <th><code>slice()</code></th>
+                        <th>Spread Operator (<code>...</code>)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Propósito</td>
+                        <td>Extraer una porción de un arreglo o cadena.</td>
+                        <td>Expandir elementos de un iterable (arreglo o cadena) en otro contexto.</td>
+                    </tr>
+                    <tr>
+                        <td>Retorno</td>
+                        <td>Devuelve un nuevo arreglo o cadena con los elementos seleccionados.</td>
+                        <td>Devuelve los elementos individuales en una lista expandida.</td>
+                    </tr>
+                    <tr>
+                        <td>Modificación del Original</td>
+                        <td>No modifica el arreglo o cadena original.</td>
+                        <td>No modifica el arreglo o cadena original.</td>
+                    </tr>
+                </tbody>
+            </table>
+        
+            <hr>
+        
+            <h2>Conclusión</h2>
+            <p>Este capítulo te ha mostrado cómo <code>slice()</code> y el Spread Operator (<code>...</code>) permiten manipular y trabajar con arreglos y cadenas de manera eficiente y flexible:</p>
+            <ul>
+                <li>Usa <code>slice()</code> cuando necesites extraer partes de arreglos o cadenas sin modificar el original.</li>
+                <li>Usa el Spread Operator para copiar, combinar o expandir elementos de arreglos o cadenas de forma expresiva.</li>
+            </ul>
+        </section>
+
+        <section id="cont14">
+            <h1>Capítulo 14: Introducción a la Programación Orientada a Objetos en JavaScript</h1>
+        
+            <h2>¿Qué es un Objeto en JavaScript?</h2>
+            <p>Un objeto en JavaScript es una colección de <strong>propiedades</strong> y <strong>métodos</strong> que representan una entidad del mundo real, como una persona, un coche o un libro. En JavaScript, los objetos permiten almacenar y manipular datos relacionados de forma estructurada.</p>
+        
+            <h3>Ejemplo: Representación de una Persona</h3>
+            <p>Consideremos una persona como ejemplo. Las características, como el <code>nombre</code> y la <code>edad</code>, se representan como propiedades, mientras que las acciones, como <code>hablar</code> o <code>caminar</code>, se representan como métodos.</p>
+        
+            <hr>
+        
+            <h2>Propiedades de un Objeto</h2>
+            <p>Las <strong>propiedades</strong> son las características de un objeto, representadas como pares clave-valor. Son similares a los adjetivos que describen a una persona o cosa.</p>
+        
+            <h3>Ejemplo de Propiedades:</h3>
+            <p>Un objeto que representa a una persona puede tener las siguientes propiedades:</p>
+            <pre><code>nombre: "Juan",
+        edad: 30,
+        altura: 1.75</code></pre>
+        
+            <hr>
+        
+            <h2>Métodos de un Objeto</h2>
+            <p>Los <strong>métodos</strong> son las acciones que un objeto puede realizar, como funciones definidas dentro del objeto. En el ejemplo de una persona, métodos como <code>hablar()</code> o <code>caminar()</code> pueden simular estas acciones.</p>
+        
+            <h3>Ejemplo de Métodos:</h3>
+            <p>En un objeto que representa a una persona, podríamos tener un método <code>saludar()</code> que imprime un mensaje en la consola.</p>
+        
+            <hr>
+        
+            <h2>Anatomía de un Objeto en JavaScript</h2>
+            <p>Un objeto en JavaScript se define utilizando llaves <code>{}</code>. Dentro de las llaves, se enumeran las propiedades y métodos, separados por comas.</p>
+        
+            <h3>Ejemplo de Objeto Completo:</h3>
+            <pre><code>// Creando un objeto que representa a una persona
+        const persona = {
+          nombre: "Felipe",
+          genero: "Masculino",
+          edad: 27,
+          estatura: 1.79,
+          saludar() {
+            console.log("Hola, mi nombre es " + this.nombre + " y soy Ingeniero de Software");
+          },
+          soltero: true
+        };
+        
+        console.log(persona);
+        persona.saludar(); <span class="comment">// Output: Hola, mi nombre es Felipe y soy Ingeniero de Software</span>
+            </code></pre>
+        
+            <hr>
+        
+            <h2>Agregando Nuevas Propiedades y Métodos a un Objeto</h2>
+            <p>En JavaScript, puedes agregar propiedades y métodos a un objeto ya existente de varias maneras:</p>
+        
+            <h3>1. Asignación Directa</h3>
+            <p>La forma más sencilla de agregar una propiedad a un objeto es mediante la asignación directa, usando la notación de punto o corchetes.</p>
+            <pre><code>persona.apellido = "Restrepo";
+        persona.ciudad = "Bogotá";
+        
+        console.log(persona);
+            </code></pre>
+        
+            <h3>2. Usando <code>Object.assign()</code></h3>
+            <p>El método <code>Object.assign()</code> permite copiar propiedades de un objeto a otro. Es útil para agregar varias propiedades al mismo tiempo.</p>
+            <pre><code>const nuevasPropiedades = {
+          telefono: 3212439492,
+          email: "lfrestrepo004@gmail.com",
+          youtube: "@codingnow404"
+        };
+        
+        Object.assign(persona, nuevasPropiedades);
+        
+        console.log(persona);
+            </code></pre>
+        
+            <h3>3. Agregar Métodos</h3>
+            <p>También puedes añadir métodos a un objeto existente.</p>
+            <pre><code>persona.despedir = function() {
+          console.log("Esto fue todo por mi primer ejercicio con objetos.");
+        };
+        
+        persona.despedir(); <span class="comment">// Output: Esto fue todo por mi primer ejercicio con objetos.</span>
+            </code></pre>
+        
+            <hr>
+        
+            <h2>Eliminando Propiedades y Métodos de un Objeto</h2>
+            <p>Para eliminar una propiedad o un método de un objeto, puedes usar la instrucción <code>delete</code>.</p>
+        
+            <h3>Ejemplo de Eliminación:</h3>
+            <pre><code>delete persona.telefono;
+        delete persona.despedir;
+        
+        console.log(persona);
+            </code></pre>
+        
+            <hr>
+        
+            <h2>Resumen</h2>
+            <p>En este capítulo, hemos visto los fundamentos de la programación orientada a objetos en JavaScript, abordando los siguientes conceptos:</p>
+            <ul>
+                <li><strong>Objetos:</strong> Colecciones de propiedades y métodos que representan entidades reales o abstractas.</li>
+                <li><strong>Propiedades:</strong> Características que describen un objeto, definidas como pares clave-valor.</li>
+                <li><strong>Métodos:</strong> Acciones que un objeto puede realizar, representados como funciones dentro del objeto.</li>
+                <li><strong>Agregación y eliminación:</strong> Formas de añadir y eliminar propiedades y métodos en objetos.</li>
+            </ul>
+        </section>
+
+        <section id="cont15">
+            <h1>Capítulo 15: Programación Orientada a Objetos - Funciones Constructoras en JavaScript</h1>
+        
+            <h2>¿Qué es una Función Constructora en JavaScript?</h2>
+            <p>Una <strong>función constructora</strong> es una función especial que se utiliza para crear múltiples objetos con la misma estructura. En lugar de definir cada objeto individualmente, las funciones constructoras permiten crear "plantillas" de objetos, optimizando y organizando mejor el código.</p>
+        
+            <h3>Ventajas de Usar Funciones Constructoras</h3>
+            <ul>
+                <li><strong>Reutilización de Código:</strong> Permiten crear múltiples objetos similares sin repetir código.</li>
+                <li><strong>Estructura y Organización:</strong> Ayudan a mantener una estructura clara, especialmente cuando se necesita crear varios objetos con propiedades y métodos comunes.</li>
+            </ul>
+        
+            <hr>
+        
+            <h2>¿Cómo Funciona una Función Constructora?</h2>
+            <p>Las funciones constructoras en JavaScript siguen una serie de convenciones y utilizan algunos elementos específicos para crear objetos:</p>
+            <ol>
+                <li><strong>Definición:</strong> Se define una función normal, pero se acostumbra a nombrarla con la primera letra en mayúscula para diferenciarla de otras funciones. Esto ayuda a identificar rápidamente las funciones que se usan como constructoras.</li>
+                <li><strong>Uso de <code>this</code>:</strong> Dentro de la función, la palabra clave <code>this</code> se refiere al nuevo objeto que se está creando. Las propiedades y métodos se asignan a <code>this</code> para que formen parte del objeto.</li>
+                <li><strong>Creación de Objetos:</strong> Para crear un nuevo objeto a partir de la función constructora, se utiliza la palabra clave <code>new</code> seguida del nombre de la función. Esto crea una instancia del objeto.</li>
+            </ol>
+        
+            <hr>
+        
+            <h2>Ejemplo de una Función Constructora</h2>
+            <p>A continuación, veremos un ejemplo de una función constructora llamada <code>People</code>, que crea objetos con propiedades como <code>nombre</code> y <code>edad</code>, y un método <code>saludar</code>.</p>
+        
+            <pre><code>// Definición de la función constructora
+        function People(nombre, edad) {
+          this.nombre = nombre; <span class="comment">// Asigna el valor del parámetro nombre a la propiedad nombre</span>
+          this.edad = edad; <span class="comment">// Asigna el valor del parámetro edad a la propiedad edad</span>
+          this.saludar = function() {
+            console.log("Hola, mi nombre es " + this.nombre); <span class="comment">// Método saludar</span>
+          };
+        }
+        
+        // Creando objetos a partir de la función constructora (instancias)
+        const persona1 = new People("Juan", 30);
+        const persona2 = new People("Ana", 25);
+        
+        // Accediendo a propiedades y métodos
+        console.log(persona1.nombre); <span class="comment">// Output: Juan</span>
+        persona2.saludar(); <span class="comment">// Output: Hola, mi nombre es Ana</span>
+            </code></pre>
+        
+            <hr>
+        
+            <h2>Explicación de los Elementos en la Función Constructora</h2>
+            <ul>
+                <li><strong>Propiedades:</strong> Las propiedades <code>nombre</code> y <code>edad</code> se asignan usando <code>this</code> para que cada instancia tenga su propio valor de estas propiedades.</li>
+                <li><strong>Método <code>saludar</code>:</strong> Este método permite que cada instancia del objeto tenga una función para imprimir un saludo personalizado en la consola.</li>
+            </ul>
+        
+            <hr>
+        
+            <h2>Creación de Múltiples Objetos con la Función Constructora</h2>
+            <p>Al utilizar la palabra clave <code>new</code> con la función <code>People</code>, creamos instancias únicas del objeto. Cada instancia tiene sus propios valores de propiedades y puede usar el método <code>saludar</code>:</p>
+        
+            <pre><code>const persona1 = new People("Juan", 30);
+        const persona2 = new People("Ana", 25);
+        
+        console.log(persona1.nombre); <span class="comment">// Output: Juan</span>
+        console.log(persona2.edad); <span class="comment">// Output: 25</span>
+        persona1.saludar(); <span class="comment">// Output: Hola, mi nombre es Juan</span>
+        persona2.saludar(); <span class="comment">// Output: Hola, mi nombre es Ana</span>
+            </code></pre>
+        
+            <hr>
+        
+            <h2>¿Por Qué Utilizar Funciones Constructoras?</h2>
+            <p>Las funciones constructoras son útiles para crear múltiples objetos de forma rápida y eficiente. Permiten definir una "plantilla" de objeto, facilitando la creación de instancias con propiedades y métodos específicos.</p>
+        
+            <h3>Ventajas:</h3>
+            <ul>
+                <li><strong>Eficiencia:</strong> Crean objetos de forma rápida sin tener que escribir código repetitivo.</li>
+                <li><strong>Consistencia:</strong> Todos los objetos creados con la función constructora tendrán la misma estructura inicial.</li>
+                <li><strong>Escalabilidad:</strong> Son ideales para proyectos grandes donde se necesitan múltiples objetos similares.</li>
+            </ul>
+        
+            <hr>
+        
+            <h2>Resumen</h2>
+            <p>En este capítulo, hemos aprendido sobre las funciones constructoras y su uso en JavaScript. Aquí están los puntos clave:</p>
+            <ul>
+                <li><strong>Función Constructora:</strong> Una función especial utilizada para crear objetos con una estructura común.</li>
+                <li><strong>Propiedades y Métodos:</strong> Se asignan a <code>this</code> para que sean únicas para cada instancia.</li>
+                <li><strong>Instanciación:</strong> Se utiliza la palabra clave <code>new</code> para crear nuevos objetos a partir de la función constructora.</li>
+            </ul>
+        
+        </section>
         
         
-        
+
         
         <div class="botones">
             <button id="prev">Anterior</button>
@@ -1114,7 +1454,7 @@ console.log(typeof colores); <span class="comment">// object (arrays son objetos
                 <li><button id="cap1">Capítulo 1: ¿Qué es JavaScript y por qué aprenderlo?</button></li>
                 <li><button id="cap2">Capítulo 2: Fundamentos de Programación</button></li>
                 <li><button id="cap3">Capítulo 3: Variables, Constantes y Tipos de Datos</button></li>
-                <li><button id="cap4">Capítulo 4: Operadores, Asignación, Comparación, Aritméticos y Lógicos</button></li>
+                <li><button id="cap4">Capítulo 4: Operadores</button></li>
                 <li><button id="cap5">Capítulo 5: Estructuras de Control</button></li>
                 <li><button id="cap6">Capítulo 6: Funciones en JavaScript</button></li>
                 <li><button id="cap7">Capítulo 7: Arrays y Estructuras de Datos</button></li>
@@ -1122,10 +1462,11 @@ console.log(typeof colores); <span class="comment">// object (arrays son objetos
                 <li><button id="cap9">Capítulo 9: Contexto de Ejecución y Scope Chain</button></li>
                 <li><button id="cap10">Capítulo 10: Mutabilidad e Inmutabilidad en Arrays</button></li>
                 <li><button id="cap11">Capítulo 11: Iteraciones con Map y Foreach</button></li>
-                <li><button id="cap12">Capítulo 12:Filtrado y Reducción con filter() y reduce()</button></li>
-
+                <li><button id="cap12">Capítulo 12: Filtrado y Reducción con filter() y reduce()</button></li>
+                <li><button id="cap13">Capítulo 13: Metodos slice() y Spread Operator</button></li>
+                <li><button id="cap14">Capítulo 14: Introducción a la POO/button></li>
+                <li><button id="cap15">Capítulo 15: POO - Funciones Constructoras</button></li>
             </ul>
-            
         </div>
     </div>
 
