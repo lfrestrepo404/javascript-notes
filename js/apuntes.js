@@ -284,15 +284,6 @@ console.log(countries)
 
 /* Ambos métodos se utilizan para iterar sobre los elementos de un arreglo, pero tienen propósitos y comportamientos distintos.
 
-    forEach()
-Propósito: Ejecutar una función por cada elemento del arreglo, principalmente para realizar alguna acción o efecto secundario.
-Retorno: No devuelve un nuevo arreglo.
-Modificación del arreglo original: No modifica directamente el arreglo original, pero la función que se le pasa como argumento podría hacerlo.
-
-¡Claro! Con gusto te explico las diferencias entre map y forEach en JavaScript al recorrer un arreglo:
-
-map() vs. forEach() en JavaScript
-Ambos métodos se utilizan para iterar sobre los elementos de un arreglo, pero tienen propósitos y comportamientos distintos.
 
 forEach()
 Propósito: Ejecutar una función por cada elemento del arreglo, principalmente para realizar alguna acción o efecto secundario.
@@ -310,7 +301,7 @@ Modificación del arreglo original: No modifica el arreglo original.
 // Ej: Usar un map para crear un nuevo arreglo en el que a partir de una lista de numeros, me genere una lista de nuevos numeros elveados a la 2
 
 const numNormal = [2,3,4,5,6,7,8]
-const numDouble = numNormal.map(num=> num * 2)
+const numDouble = numNormal.map(num => num * 2)
 
 console.log(numNormal)
 console.log(numDouble)

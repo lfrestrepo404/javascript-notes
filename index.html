@@ -791,6 +791,195 @@ console.log(typeof colores); <span class="comment">// object (arrays son objetos
             <h2>Conclusión</h2>
             <p>Comprender el contexto de ejecución y el scope en JavaScript es fundamental para organizar y controlar el acceso a las variables y funciones en el código. El contexto global abarca variables y funciones accesibles desde cualquier lugar, mientras que los contextos de función y bloque limitan la visibilidad de variables a entornos específicos. La cadena de alcance permite a JavaScript buscar variables en contextos superiores si no las encuentra en el contexto actual. Este sistema proporciona flexibilidad y control, especialmente al desarrollar aplicaciones más complejas.</p>
         </section>
+
+        <section id="cont10">
+            <h1>Capítulo 10: Mutabilidad e Inmutabilidad en Arrays</h1>
+        
+            <h2>¿Qué es la Mutabilidad e Inmutabilidad?</h2>
+            <p>En programación, la <strong>mutabilidad</strong> se refiere a la capacidad de un objeto para ser modificado después de su creación. Cuando un array es mutable, podemos cambiar sus elementos o la estructura interna sin crear uno nuevo. La <strong>inmutabilidad</strong>, en cambio, significa que un objeto no puede cambiarse; cualquier modificación produce una nueva copia.</p>
+        
+            <hr>
+        
+            <h2>Mutabilidad en Arrays</h2>
+            <p>En JavaScript, los arrays son mutables, lo que significa que podemos modificar sus elementos o su longitud después de crearlos. Algunos métodos que modifican el array original incluyen:</p>
+            <ul>
+                <li><code>push()</code> - Agrega uno o más elementos al final del array.</li>
+                <li><code>pop()</code> - Elimina el último elemento del array.</li>
+                <li><code>splice()</code> - Añade, elimina o reemplaza elementos en cualquier posición del array.</li>
+            </ul>
+        
+            <h3>Ejemplo de Mutabilidad</h3>
+            <pre><code><span class="comment">// Declaramos un array</span>
+        let numeros = [1, 2, 3];
+        
+        <span class="comment">// Usamos push() para añadir un elemento</span>
+        numeros.push(4);
+        console.log(numeros); <span class="comment">// Output: [1, 2, 3, 4]</span>
+        
+        <span class="comment">// Usamos pop() para eliminar el último elemento</span>
+        numeros.pop();
+        console.log(numeros); <span class="comment">// Output: [1, 2, 3]</span>
+        
+        <span class="comment">// Usamos splice() para eliminar y añadir elementos</span>
+        numeros.splice(1, 1, 9);
+        console.log(numeros); <span class="comment">// Output: [1, 9, 3]</span>
+            </code></pre>
+        
+            <hr>
+        
+            <h2>Inmutabilidad en Arrays</h2>
+            <p>Algunos métodos no cambian el array original y, en cambio, devuelven una copia modificada. Esto es importante si queremos trabajar con datos sin alterar el array original. Algunos métodos inmutables incluyen:</p>
+            <ul>
+                <li><code>concat()</code> - Combina arrays sin modificar el original.</li>
+                <li><code>slice()</code> - Devuelve una copia de una parte del array.</li>
+                <li><code>map()</code> - Crea un nuevo array aplicando una función a cada elemento.</li>
+            </ul>
+        
+            <h3>Ejemplo de Inmutabilidad</h3>
+            <pre><code><span class="comment">// Declaramos un array</span>
+        let letras = ["a", "b", "c"];
+        
+        <span class="comment">// Usamos concat() para agregar elementos sin modificar el array original</span>
+        let nuevasLetras = letras.concat("d");
+        console.log(letras); <span class="comment">// Output: ["a", "b", "c"]</span>
+        console.log(nuevasLetras); <span class="comment">// Output: ["a", "b", "c", "d"]</span>
+        
+        <span class="comment">// Usamos slice() para hacer una copia parcial</span>
+        let copia = letras.slice(0, 2);
+        console.log(copia); <span class="comment">// Output: ["a", "b"]</span>
+        
+        <span class="comment">// Usamos map() para crear un nuevo array con valores en mayúscula</span>
+        let mayusculas = letras.map(letra => letra.toUpperCase());
+        console.log(mayusculas); <span class="comment">// Output: ["A", "B", "C"]</span>
+        console.log(letras); <span class="comment">// Output: ["a", "b", "c"] (sin cambios)</span>
+            </code></pre>
+        
+            <hr>
+        
+            <h2>¿Cuándo Usar Métodos Mutables e Inmutables?</h2>
+            <p>Elegir entre métodos mutables e inmutables depende de si necesitas conservar el estado original del array. Usar métodos inmutables es ideal cuando:</p>
+            <ul>
+                <li>Deseas preservar el array original para comparaciones o registros.</li>
+                <li>Trabajas en aplicaciones donde el estado de los datos debe ser controlado estrictamente (como en frameworks de frontend).</li>
+            </ul>
+            <p>Los métodos mutables son útiles para ahorrar memoria y reducir el procesamiento cuando no necesitas la versión original del array.</p>
+        
+            <hr>
+        
+            <h2>Conclusión</h2>
+            <p>La mutabilidad y la inmutabilidad de los arrays en JavaScript nos ofrecen flexibilidad para elegir cómo manipular datos. Con los métodos mutables, podemos modificar directamente los arrays, mientras que los métodos inmutables nos permiten crear copias y mantener los datos originales intactos. Comprender esta diferencia es esencial para escribir código seguro y eficiente.</p>
+        </section>
+        
+        <section id="cont11">
+            <h1>Capítulo 11: Iteraciones con <code>map</code> y <code>forEach</code></h1>
+        
+            <h2>Introducción a <code>map</code> y <code>forEach</code></h2>
+            <p>En JavaScript, <code>map</code> y <code>forEach</code> son métodos comunes para recorrer los elementos de un array. Ambos permiten ejecutar una función en cada elemento, pero tienen propósitos y comportamientos distintos:</p>
+            
+            <ul>
+                <li><strong><code>forEach</code></strong>: Ejecuta una función para cada elemento, generalmente para realizar una acción o efecto secundario. No devuelve un nuevo array.</li>
+                <li><strong><code>map</code></strong>: Aplica una función a cada elemento para crear un nuevo array, transformando cada valor del array original.</li>
+            </ul>
+        
+            <hr>
+        
+            <h2>Uso de <code>forEach</code></h2>
+            <p>El método <code>forEach</code> permite ejecutar una función sobre cada elemento de un array, sin crear un nuevo array como resultado. Esto lo hace ideal para operaciones que tienen efectos secundarios o donde no necesitamos un array de retorno.</p>
+        
+            <h3>Ejemplo: Multiplicar cada número por 2 y mostrarlo en consola</h3>
+            <pre><code><span class="comment">// Declaramos un array de números</span>
+        const numbers = [1, 2, 3, 4];
+        
+        <span class="comment">// Usamos forEach para iterar y multiplicar cada número por 2</span>
+        numbers.forEach(number => {
+            console.log(number * 2); <span class="comment">// Output: 2, 4, 6, 8</span>
+        });
+            </code></pre>
+        
+            <h3>Ejemplo: Sumar los valores de un array</h3>
+            <pre><code><span class="comment">// Declaramos un array de números</span>
+        const nums = [2, 4, 6, 8, 10];
+        
+        let suma = 0;
+        nums.forEach(num => {
+            suma += num;
+        });
+        console.log('Suma de los números:', suma); <span class="comment">// Output: 30</span>
+            </code></pre>
+        
+            <h3>Resumen de <code>forEach</code></h3>
+            <p><code>forEach</code> es útil para operaciones donde no necesitamos un nuevo array, sino realizar acciones con los elementos del array original.</p>
+        
+            <hr>
+        
+            <h2>Uso de <code>map</code></h2>
+            <p>El método <code>map</code> se utiliza para transformar cada elemento de un array en un nuevo valor y devuelve un nuevo array con estos valores transformados, sin modificar el array original.</p>
+        
+            <h3>Ejemplo: Crear un array de números elevados al cuadrado</h3>
+            <pre><code><span class="comment">// Declaramos un array de números</span>
+        const originalNumbers = [2, 3, 4, 5];
+        
+        <span class="comment">// Usamos map para crear un nuevo array con cada número elevado al cuadrado</span>
+        const squaredNumbers = originalNumbers.map(num => num ** 2);
+        
+        console.log('Números originales:', originalNumbers); <span class="comment">// Output: [2, 3, 4, 5]</span>
+        console.log('Números al cuadrado:', squaredNumbers); <span class="comment">// Output: [4, 9, 16, 25]</span>
+            </code></pre>
+        
+            <h3>Ejemplo: Convertir temperaturas de Fahrenheit a Celsius</h3>
+            <pre><code><span class="comment">// Declaramos un array de temperaturas en Fahrenheit</span>
+        const tempsF = [32, 68, 95];
+        
+        <span class="comment">// Usamos map para convertir cada temperatura a Celsius</span>
+        const tempsC = tempsF.map(f => (5/9) * (f - 32));
+        
+        console.log('Temperaturas en Fahrenheit:', tempsF); <span class="comment">// Output: [32, 68, 95]</span>
+        console.log('Temperaturas en Celsius:', tempsC); <span class="comment">// Output: [0, 20, 35]</span>
+            </code></pre>
+        
+            <h3>Resumen de <code>map</code></h3>
+            <p><code>map</code> es ideal para crear nuevos arrays basados en la transformación de cada elemento del array original.</p>
+        
+            <hr>
+        
+            <h2>Comparación entre <code>map</code> y <code>forEach</code></h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Aspecto</th>
+                        <th><code>forEach</code></th>
+                        <th><code>map</code></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Propósito</td>
+                        <td>Ejecutar una función en cada elemento, ideal para efectos secundarios.</td>
+                        <td>Crear un nuevo array con cada elemento transformado.</td>
+                    </tr>
+                    <tr>
+                        <td>Retorno</td>
+                        <td>No devuelve un nuevo array (retorna <code>undefined</code>).</td>
+                        <td>Devuelve un nuevo array con los valores transformados.</td>
+                    </tr>
+                    <tr>
+                        <td>Modificación del Array Original</td>
+                        <td>No modifica el array, pero permite efectos secundarios.</td>
+                        <td>No modifica el array original, genera uno nuevo.</td>
+                    </tr>
+                </tbody>
+            </table>
+        
+            <hr>
+        
+            <h2>Conclusión</h2>
+            <p>Usar <code>forEach</code> o <code>map</code> depende del objetivo de la iteración:</p>
+            <ul>
+                <li>Utiliza <code>forEach</code> para realizar acciones sin generar un nuevo array.</li>
+                <li>Utiliza <code>map</code> cuando quieras transformar cada elemento y obtener un nuevo array con los resultados.</li>
+            </ul>
+        </section>
+        
         
         
         <div class="botones">
@@ -798,7 +987,7 @@ console.log(typeof colores); <span class="comment">// object (arrays son objetos
             <button id="next">Siguiente</button>
         </div>
         <div class="cont-menu">
-            <button class="btn-menu" id="btn-active" onclick="menu()" ><i class="fa-solid fa-ellipsis-vertical"></i></button>
+            <button class="btn-menu" id="btn-active"  ><i class="fa-solid fa-ellipsis-vertical"></i></button>
             <ul id="ul-btns" class="">
                 <li><h3>Menú</h3></li>
                 <li><button id="cap1">Capítulo 1: ¿Qué es JavaScript y por qué aprenderlo?</button></li>
@@ -810,6 +999,8 @@ console.log(typeof colores); <span class="comment">// object (arrays son objetos
                 <li><button id="cap7">Capítulo 7: Arrays y Estructuras de Datos</button></li>
                 <li><button id="cap8">Capítulo 8: Objetos en JavaScript</button></li>
                 <li><button id="cap9">Capítulo 9: Contexto de Ejecución y Scope Chain</button></li>
+                <li><button id="cap10">Capítulo 10: Mutabilidad e Inmutabilidad en Arrays</button></li>
+                <li><button id="cap11">Capítulo 11: Iteraciones con Map y Foreach</button></li>
             </ul>
             
         </div>
