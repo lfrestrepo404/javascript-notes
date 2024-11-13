@@ -1,5 +1,5 @@
 <img src="https://avatars.githubusercontent.com/u/112680688?v=4" width="60px" style="border-radius: 50">
-# Curso JavaScript 2024 - Platzi - <a href="https://lfrestrepo404.github.io/cursogit/" target="_blank">Visitar Website</a>
+# Curso JavaScript 2024 - Platzi - <a href="https://lfrestrepo404.github.io/javascript-notes/" target="_blank">Visitar Website</a>
 
 Este repositorio está diseñado para el curso profesional de JavaScript ofrecido en Platzi. Aquí encontrarás mis apuntes, ejemplos y ejercicios prácticos que facilitan la comprensión de los conceptos fundamentales de JavaScript.
 
