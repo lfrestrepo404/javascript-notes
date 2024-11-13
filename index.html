@@ -696,6 +696,102 @@ console.log(typeof colores); <span class="comment">// object (arrays son objetos
             <h2>Conclusión</h2>
             <p>Los objetos son una de las estructuras de datos más importantes en JavaScript. Permiten organizar los datos de manera eficiente y representar entidades complejas. A lo largo de este capítulo, hemos aprendido cómo crear objetos, acceder a sus propiedades, agregar o modificar propiedades, y recorrerlos utilizando ciclos. Estas habilidades son esenciales para trabajar con datos en JavaScript.</p>
         </section>
+
+        <section id="cont9">
+            <h1>Capítulo 9: Contexto de Ejecución y Scope Chain en JavaScript</h1>
+        
+            <h2>Contexto de Ejecución</h2>
+            <p>En JavaScript, el contexto de ejecución es el entorno en el que el código es evaluado y ejecutado. Cada vez que se ejecuta una función o se ingresa a un bloque de código, se crea un nuevo contexto de ejecución. Existen dos tipos principales de contextos:</p>
+            <ul>
+                <li><strong>Contexto Global:</strong> Este es el contexto predeterminado cuando el script empieza a ejecutarse. Las variables y funciones definidas en este contexto están disponibles en todo el código.</li>
+                <li><strong>Contexto Local o de Función:</strong> Este es un contexto nuevo que se crea cada vez que se llama a una función. Dentro de este contexto, pueden existir variables locales que no son accesibles fuera de la función.</li>
+            </ul>
+        
+            <hr>
+        
+            <h2>Scope y Scope Chain (Cadena de Alcance)</h2>
+            <p>El <strong>scope</strong> (o alcance) se refiere a la visibilidad de las variables, es decir, desde dónde pueden ser accedidas en el código. En JavaScript, existen tres tipos de scope:</p>
+            <ul>
+                <li><strong>Scope Global:</strong> Variables declaradas en el contexto global. Son accesibles desde cualquier parte del código.</li>
+                <li><strong>Scope de Función:</strong> Variables declaradas dentro de una función. Solo son accesibles dentro de esa función.</li>
+                <li><strong>Scope de Bloque:</strong> Variables declaradas dentro de un bloque (como un <code>if</code>, <code>for</code> o <code>{}</code>), utilizando <code>let</code> o <code>const</code>. Solo están accesibles dentro de ese bloque específico.</li>
+            </ul>
+            <p>El <strong>Scope Chain</strong> (o Cadena de Alcance) es el mecanismo que utiliza JavaScript para buscar variables. Cuando una variable es llamada, JavaScript empieza la búsqueda en el contexto actual. Si no la encuentra, va al contexto superior y continúa hasta llegar al contexto global.</p>
+        
+            <hr>
+        
+            <h2>Ejemplos de Contexto Global y Scope</h2>
+            <p>Veamos algunos ejemplos que ilustran el funcionamiento de los diferentes tipos de contexto y scope.</p>
+        
+            <h3>1. Contexto Global</h3>
+            <p>En el siguiente ejemplo, declaramos una variable en el contexto global. Esta variable es accesible desde cualquier parte del código.</p>
+            <pre><code><span class="comment">// Declaración de una variable global</span>
+        let nombreGlobal = "Juan";
+        
+        function saludar() {
+            console.log("Hola, " + nombreGlobal); <span class="comment">// Accedemos a una variable global dentro de una función</span>
+        }
+        
+        saludar(); <span class="comment">// Output: "Hola, Juan"</span>
+        console.log(nombreGlobal); <span class="comment">// Output: "Juan"</span>
+            </code></pre>
+        
+            <h3>2. Contexto de Función y Scope Local</h3>
+            <p>En el contexto de una función, podemos definir variables que solo existen dentro de esa función. Estas variables no son accesibles desde el contexto global.</p>
+            <pre><code><span class="comment">// Declaración de una variable en el contexto de una función</span>
+        function mostrarEdad() {
+            let edad = 25;
+            console.log("Edad dentro de la función: " + edad); <span class="comment">// Output: 25</span>
+        }
+        
+        mostrarEdad();
+        console.log(edad); <span class="comment">// Error: edad is not defined (edad no es accesible fuera de la función)</span>
+            </code></pre>
+        
+            <h3>3. Scope de Bloque</h3>
+            <p>Las variables declaradas con <code>let</code> y <code>const</code> dentro de un bloque de código solo son accesibles dentro de ese bloque específico.</p>
+            <pre><code><span class="comment">// Ejemplo de scope de bloque</span>
+        if (true) {
+            let mensaje = "Hola desde el bloque";
+            console.log(mensaje); <span class="comment">// Output: "Hola desde el bloque"</span>
+        }
+        
+        console.log(mensaje); <span class="comment">// Error: mensaje is not defined (mensaje no es accesible fuera del bloque)</span>
+            </code></pre>
+        
+            <h3>4. Acceso desde Bloques Internos a Variables Globales</h3>
+            <p>Las variables globales pueden ser accedidas desde cualquier bloque o función.</p>
+            <pre><code><span class="comment">// Declaración de una variable global</span>
+        let saludo = "¡Hola, mundo!";
+        
+        function mostrarSaludo() {
+            console.log(saludo); <span class="comment">// Accedemos a la variable global</span>
+        }
+        
+        mostrarSaludo(); <span class="comment">// Output: "¡Hola, mundo!"</span>
+            </code></pre>
+        
+            <h3>5. Ejemplo Completo con Scope Chain</h3>
+            <p>En este ejemplo, se ve cómo JavaScript recurre al <code>Scope Chain</code> para buscar una variable que no está en el contexto local, sino en el contexto global.</p>
+            <pre><code><span class="comment">// Declaración de variables en diferentes contextos</span>
+        let animal = "Gato";
+        
+        function mostrarAnimal() {
+            let animalLocal = "Perro";
+            console.log(animalLocal); <span class="comment">// Output: "Perro" (prioriza la variable local)</span>
+            console.log(animal); <span class="comment">// Output: "Gato" (accedemos a la variable global)</span>
+        }
+        
+        mostrarAnimal();
+        console.log(animalLocal); <span class="comment">// Error: animalLocal is not defined (no es accesible fuera de la función)</span>
+            </code></pre>
+        
+            <hr>
+        
+            <h2>Conclusión</h2>
+            <p>Comprender el contexto de ejecución y el scope en JavaScript es fundamental para organizar y controlar el acceso a las variables y funciones en el código. El contexto global abarca variables y funciones accesibles desde cualquier lugar, mientras que los contextos de función y bloque limitan la visibilidad de variables a entornos específicos. La cadena de alcance permite a JavaScript buscar variables en contextos superiores si no las encuentra en el contexto actual. Este sistema proporciona flexibilidad y control, especialmente al desarrollar aplicaciones más complejas.</p>
+        </section>
+        
         
         <div class="botones">
             <button id="prev">Anterior</button>
@@ -713,6 +809,7 @@ console.log(typeof colores); <span class="comment">// object (arrays son objetos
                 <li><button id="cap6">Capítulo 6: Funciones en JavaScript</button></li>
                 <li><button id="cap7">Capítulo 7: Arrays y Estructuras de Datos</button></li>
                 <li><button id="cap8">Capítulo 8: Objetos en JavaScript</button></li>
+                <li><button id="cap9">Capítulo 9: Contexto de Ejecución y Scope Chain</button></li>
             </ul>
             
         </div>
