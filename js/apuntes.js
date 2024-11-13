@@ -181,8 +181,100 @@ for (let indice in numeros) {
 
 //Manejo de Arrays
 
-/* Podemos crear arreglos de 3 formas diferentes actualmente
- 1. array()
- 2. new array()
- 3. [] -> Literal Array
+/* Recordemos que podemos crear variables para almacenar un valor.
+Con los arrays podemos crear variables que almacenen multiples valores
+usualmente de un mismo contexto */
+
+/* Podemos crear o declarar arreglos de 2 formas diferentes actualmente
+ 1. array() o new array()
+ 2. [] -> Literal Array
 */
+
+const lenguajes = Array('Python', 'Php', 'Java', 'C#', 'JavaScript')
+console.log(lenguajes)
+
+const oneNumber = [4]
+console.log(oneNumber)
+
+const deportes = ['Futbol', 'Tennis', 'Rugby']
+console.log(deportes)
+
+//Arrays Mixtos
+
+const adso = [
+    'SENA',
+    '27 Meses',
+    'Tecnólogo',
+    {
+        lectiva: '21 Meses',
+        productiva: '6 meses',
+        requisitos: ['Bachiller', 'Presentación Icfes', 'Disponibilidad de tiempo'],
+        homologacion: 'Ingenieria de software',
+        tarjetProfesional: true
+    }
+]
+
+console.log(adso)
+
+//Accediendo a arrays elements
+const objectInArray = adso[3]
+console.log(objectInArray)
+
+//Tamaño o longitud de valores de un array
+// .length
+
+const numberOfValues = adso.length
+console.log(numberOfValues)
+
+
+//Mutabilidad e Inmutabilidad de Arrays
+
+/*
+
+Mutabilidad: Puedes modificar directamente un array existente, agregando, eliminando o cambiando elementos.
+Métodos mutables: copyWithin, fill, pop, push, reverse, shift, sort, splice, unshift.
+Inmutabilidad: Cuando realizas una operación sobre un array, se crea un nuevo array con los cambios, dejando el original intacto.
+Métodos no mutables: slice, concat, toReversed, slice, toSorted, toSoliced.
+
+*/
+//Ej: Mutability - push crea o añade un valor al final del arreglo
+adso.push('Presencial');
+
+console.log(adso)
+
+//Ej: Inmutability - concat, crea un nuevo array a partir del array anterior
+const adsoSena = adso.concat(['Virtual', '20 Competencias']);
+console.log(adso)
+console.log(adsoSena)
+
+
+//Ejercicio práctico con arrays y su longitud
+
+const numbersArray = [2,4,6,8,10]
+
+let sumaArray = 0;
+
+for (let i = 0; i < numbersArray.length; i++){
+    sumaArray += numbersArray[i]
+}
+
+console.log(sumaArray)
+
+/*
+Ejemplos de muitabilidad con unshift(Agregas elementos al principio del arreglo) o  push (añade elementos al final del array)
+y shift(Elimina elementos al principio de un array) o pop (el cual elimina el ultimo elemento de un array )
+
+*/
+
+const countries = ['COL', 'ARG', 'MEX']
+const newContries = countries.push('CL','PER');
+const newConstriesTwo = countries.unshift('BRA', 'BOL','VEN')
+
+console.log(countries)
+console.log(newContries)
+console.log(newConstriesTwo)
+
+const removeCountriePush = countries.pop()
+console.log(countries)
+const removeCountrieShift = countries.shift()
+console.log(countries)
