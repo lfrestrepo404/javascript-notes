@@ -1572,6 +1572,164 @@ console.log(typeof colores); <span class="comment">// object (arrays son objetos
         
         </section>
         
+        <section id="cont17">
+            <h1>Capítulo 17: JavaScript Síncrono y Asíncrono</h1>
+        
+            <h2>1. ¿Qué es JavaScript Síncrono?</h2>
+            <p>
+                JavaScript es, por defecto, un lenguaje de programación <strong>síncrono y de un solo hilo</strong>. Esto significa que las operaciones se ejecutan una tras otra en el orden en que están escritas, y cada operación debe completarse antes de que la siguiente pueda empezar. 
+            </p>
+            <p>En código síncrono, si una operación tarda mucho tiempo en completarse (como acceder a un archivo grande o una solicitud a un servidor), el resto del código se detendrá hasta que esa operación termine.</p>
+        
+            <h3>Ejemplo de JavaScript Síncrono</h3>
+            <pre><code>// Operaciones síncronas
+        console.log("Inicio de ejecución");
+        
+        function tareaPesada() {
+          for (let i = 0; i < 1e9; i++) {} // Simula una operación costosa
+        }
+        
+        tareaPesada(); 
+        console.log("Fin de ejecución");
+        </code></pre>
+            <p><strong>Salida:</strong></p>
+            <pre><code>
+        Inicio de ejecución
+        Fin de ejecución
+            </code></pre>
+            <p>
+                En este ejemplo, la función <code>tareaPesada</code> bloquea la ejecución del programa hasta que termine, haciendo que el mensaje "Fin de ejecución" se imprima solo después.
+            </p>
+        
+            <hr>
+        
+            <h2>2. ¿Qué es JavaScript Asíncrono?</h2>
+            <p>
+                JavaScript <strong>asíncrono</strong> permite que ciertas tareas se ejecuten en segundo plano, mientras el resto del código continúa ejecutándose. Esto es crucial para evitar bloqueos en la interfaz de usuario o en aplicaciones web.
+            </p>
+            <p>
+                Las tareas asíncronas no se ejecutan de inmediato; en su lugar, se colocan en una cola de tareas para ejecutarse una vez que el hilo principal esté libre.
+            </p>
+        
+            <h3>Ejemplo de JavaScript Asíncrono</h3>
+            <pre><code>// Operaciones asíncronas
+        console.log("Inicio de ejecución");
+        
+        setTimeout(() => {
+          console.log("Tarea asíncrona terminada");
+        }, 2000); // Se ejecutará después de 2 segundos
+        
+        console.log("Fin de ejecución");
+        </code></pre>
+            <p><strong>Salida:</strong></p>
+            <pre><code>
+        Inicio de ejecución
+        Fin de ejecución
+        Tarea asíncrona terminada
+            </code></pre>
+            <p>
+                Aquí, el mensaje "Tarea asíncrona terminada" se imprime después de los otros mensajes porque se ejecuta de manera asíncrona, dejando que el resto del código continúe.
+            </p>
+        
+            <hr>
+        
+            <h2>3. Métodos Asíncronos en JavaScript</h2>
+            <p>JavaScript tiene varias formas de manejar tareas asíncronas:</p>
+            <ul>
+                <li><strong>Callbacks:</strong> Funciones que se pasan como argumento a otras funciones y se ejecutan después de que se complete una operación.</li>
+                <li><strong>Promises:</strong> Objetos que representan un valor que puede estar disponible ahora, en el futuro o nunca.</li>
+                <li><strong>Async/Await:</strong> Una sintaxis más moderna y legible para manejar Promises.</li>
+            </ul>
+        
+            <h3>Ejemplo con Promises</h3>
+            <pre><code>// Promesa que simula una solicitud a un servidor
+        const promesa = new Promise((resolve, reject) => {
+          setTimeout(() => {
+            resolve("Datos recibidos");
+          }, 2000);
+        });
+        
+        console.log("Inicio de ejecución");
+        
+        promesa.then((resultado) => {
+          console.log(resultado); // Se ejecuta cuando la promesa se resuelve
+        });
+        
+        console.log("Fin de ejecución");
+        </code></pre>
+            <p><strong>Salida:</strong></p>
+            <pre><code>
+        Inicio de ejecución
+        Fin de ejecución
+        Datos recibidos
+            </code></pre>
+        
+            <h3>Ejemplo con Async/Await</h3>
+            <pre><code>// Función asíncrona con await
+        async function obtenerDatos() {
+          console.log("Inicio de solicitud");
+          const datos = await new Promise((resolve) => {
+            setTimeout(() => {
+              resolve("Datos cargados");
+            }, 2000);
+          });
+          console.log(datos);
+        }
+        
+        obtenerDatos();
+        console.log("Código sigue ejecutándose");
+        </code></pre>
+            <p><strong>Salida:</strong></p>
+            <pre><code>
+        Inicio de solicitud
+        Código sigue ejecutándose
+        Datos cargados
+            </code></pre>
+            <p>
+                En este caso, el uso de <code>await</code> detiene la ejecución de la función <code>obtenerDatos</code> mientras espera la resolución de la promesa, pero no bloquea el hilo principal.
+            </p>
+        
+            <hr>
+        
+            <h2>4. Comparación entre Síncrono y Asíncrono</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Aspecto</th>
+                        <th>Síncrono</th>
+                        <th>Asíncrono</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Ejecución</td>
+                        <td>En orden, bloqueando el código.</td>
+                        <td>Permite que otras tareas se ejecuten mientras espera.</td>
+                    </tr>
+                    <tr>
+                        <td>Uso</td>
+                        <td>Tareas rápidas y predecibles.</td>
+                        <td>Tareas que requieren tiempo, como solicitudes a servidores.</td>
+                    </tr>
+                    <tr>
+                        <td>Ejemplo</td>
+                        <td><code>for</code>, cálculos matemáticos.</td>
+                        <td><code>setTimeout</code>, solicitudes HTTP.</td>
+                    </tr>
+                </tbody>
+            </table>
+        
+            <hr>
+        
+            <h2>Resumen</h2>
+            <p>En este capítulo, exploramos las diferencias clave entre el JavaScript síncrono y asíncrono:</p>
+            <ul>
+                <li><strong>Síncrono:</strong> Las tareas se ejecutan en orden y bloquean el código mientras se completan.</li>
+                <li><strong>Asíncrono:</strong> Las tareas se ejecutan en segundo plano, permitiendo que el código principal continúe.</li>
+                <li>Métodos como <code>setTimeout</code>, Promises y <code>async/await</code> facilitan la programación asíncrona.</li>
+            </ul>
+        </section>
+        
         
         
 
@@ -1600,6 +1758,8 @@ console.log(typeof colores); <span class="comment">// object (arrays son objetos
                 <li><button id="cap14">Capítulo 14: Introducción a la POO</button></li>
                 <li><button id="cap15">Capítulo 15: POO - Funciones Constructoras</button></li>
                 <li><button id="cap16">Capítulo 16: POO - Clases, Constructores, Prototipos y Herencia</button></li>
+
+                <li><button id="cap17">Capítulo 17: JavaScript Síncrono y Asíncrono</button></li>
 
             </ul>
         </div>
