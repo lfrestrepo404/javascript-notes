@@ -1530,9 +1530,10 @@ console.log(typeof colores); <span class="comment">// object (arrays son objetos
             console.log(`Empleado: ${this.nombre}, Salario: ${this.salario}`);
           }
         }
-        
+        //Al usar Extends hereda las propiedades y métodos de la clase Empleado
         class Gerente extends Empleado {
           constructor(nombre, salario, departamento) {
+            //Al usar super estoy llamando constructor de la clase padre heredando sus propiedades, puedo usar todas o ciertas propiedades
             super(nombre, salario); <span class="comment">// Llama al constructor de Empleado</span>
             this.departamento = departamento;
           }
