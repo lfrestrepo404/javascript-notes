@@ -743,3 +743,5 @@ Empleado es la clase padre con propiedades nombre y salario y el método mostrar
 Gerente es la clase hija que hereda de Empleado, añadiendo una propiedad departamento y redefiniendo el método mostrarInfo para incluir más información.
 
 */
+
+
