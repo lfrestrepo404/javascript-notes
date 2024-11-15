@@ -10,36 +10,54 @@ El objetivo de este proyecto es crear un sitio útil donde recopile todos mis ap
 ## Contenido del Repositorio
 
 A continuación, se presenta una lista de los temas que cubro en mis apuntes:
+1. **¿Qué es JavaScript y por qué aprenderlo?**  
+   Introducción al lenguaje y su importancia en el desarrollo web.
 
-1. **Introducción a JavaScript**
-   - Qué es JavaScript y su importancia en el desarrollo web.
-   - ¿Por qué aprender JavaScript y cómo influye en el front-end y back-end?
+2. **Fundamentos de Programación**  
+   Conceptos básicos de programación como variables, operadores y estructuras de control.
 
-2. **Fundamentos de Programación**
-   - Conceptos básicos como variables, tipos de datos, operadores, y estructuras de control.
+3. **Variables, Constantes y Tipos de Datos**  
+   Uso de `let`, `const`, `var` y los tipos de datos en JavaScript.
 
-3. **Variables, Constantes y Tipos de Datos**
-   - Explicación de los diferentes tipos de datos en JavaScript (string, number, boolean, null, undefined, object).
-   - Cómo trabajar con variables y constantes usando `let`, `const` y `var`.
+4. **Operadores**  
+   Explicación y ejemplos de operadores de asignación, comparación, aritméticos y lógicos.
 
-4. **Operadores**
-   - Operadores de asignación, comparación, aritméticos y lógicos con ejemplos prácticos.
+5. **Estructuras de Control**  
+   Condicionales (`if`, `else`, `switch`) y bucles (`while`, `for`).
 
-5. **Estructuras de Control**
-   - Condicionales (`if`, `else if`, `else`, `switch case`).
-   - Bucles (`while`, `for`, `forEach`) con ejemplos de uso.
+6. **Funciones en JavaScript**  
+   Creación, uso y ejemplos prácticos de funciones, además de eventos relacionados.
 
-6. **Funciones en JavaScript**
-   - Definición, creación y uso de funciones en JavaScript.
-   - Explicación sobre cómo las funciones pueden ejecutarse en respuesta a eventos.
+7. **Arrays y Estructuras de Datos**  
+   Manipulación de arrays y métodos básicos para gestionar datos.
 
-7. **Arrays y Estructuras de Datos**
-   - Definición y ejemplos de arrays.
-   - Métodos para recorrer, agregar y eliminar elementos en arrays.
+8. **Objetos en JavaScript**  
+   Definición, propiedades, métodos y manipulación de objetos.
 
-8. **Objetos en JavaScript**
-   - Definición de objetos, cómo acceder a sus propiedades y cómo manipularlos.
+9. **Contexto de Ejecución y Scope Chain**  
+   Cómo funciona el alcance de las variables y el contexto en el que se ejecuta el código.
 
+10. **Mutabilidad e Inmutabilidad en Arrays**  
+    Diferencias entre objetos mutables e inmutables, y cómo trabajar con ellos.
+
+11. **Iteraciones con map() y forEach()**  
+    Métodos para recorrer arrays de manera eficiente.
+
+12. **Filtrado y Reducción con filter() y reduce()**  
+    Uso de `filter` para filtrar datos y `reduce` para agregarlos.
+
+13. **Métodos slice() y Spread Operator**  
+    Cómo copiar, dividir y combinar arrays usando estos métodos.
+
+14. **Introducción a la POO**  
+    Conceptos fundamentales como objetos, clases, herencia y métodos.
+
+15. **POO - Funciones Constructoras**  
+    Uso de funciones constructoras para crear objetos.
+
+16. **POO - Clases, Constructores, Prototipos y Herencia**  
+    Implementación de clases modernas y uso de herencia en JavaScript.
+    
 ## Contribuciones
 
 Las contribuciones son bienvenidas. Si deseas colaborar o agregar algo, por favor sigue estos pasos:
