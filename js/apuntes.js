@@ -605,3 +605,141 @@ const persona2 = new People("Ana", 25);
 // Accediendo a propiedades y métodos
 console.log(persona1.nombre); // Imprime: Juan
 persona2.saludar(); // Imprime: Hola, mi nombre es Ana
+
+
+
+/*
+
+1. Clases en JavaScript
+Una clase es una plantilla para crear objetos con propiedades y métodos comunes. Aunque JavaScript no tiene clases como en otros lenguajes desde el principio, a partir de ECMAScript 6 (ES6) se introdujo la sintaxis de clases, lo que facilita escribir y entender código orientado a objetos.
+
+Definición de Clase: Se usa la palabra clave class seguida del nombre de la clase. Dentro de la clase, se definen propiedades y métodos.
+Convención de Nombre: Como buena práctica, el nombre de la clase comienza en mayúscula.
+
+
+*/
+
+class Women {
+  //Propiedades
+  constructor(nombre,edad,telefono){
+    this.nombre = nombre;
+    this.edad = edad;
+    this.telefono = telefono;
+  }
+  //Metodos
+  saludar(){
+    console.log(`Hola, mi nombre es ${this.nombre} y tengo ${this.edad} años, mi telefono es ${this.telefono}`)
+  }
+}
+//Instancias
+const mujer1 = new Women('Laura',25, 3116340888)
+
+mujer1.saludar()
+
+/*
+2. Constructores
+El constructor es un método especial de una clase que se ejecuta automáticamente cuando se crea una nueva instancia de esa clase. Su función es inicializar las propiedades del objeto.
+
+Uso de constructor: Se utiliza dentro de la clase y lleva el nombre constructor.
+Inicialización de Propiedades: Dentro del constructor, this se refiere a la nueva instancia y se usa para asignar valores iniciales a las propiedades del objeto.
+
+
+*/
+
+class Animal {
+  constructor(nombre, tipo) {
+      this.nombre = nombre;
+      this.tipo = tipo;
+  }
+
+  describir() {
+      console.log(`Este es un ${this.tipo} llamado ${this.nombre}, por ende tiene 4 patas y es mamifero`);
+  }
+}
+
+const animal1 = new Animal('Tiger', 'Felino');
+animal1.describir(); // Output: Este es un Felino llamado Tiger.
+
+
+/*
+
+3. Prototipos
+Prototipos en JavaScript son una forma de compartir métodos y propiedades entre objetos. Cada función en JavaScript tiene una propiedad llamada prototype, la cual permite agregar métodos que serán compartidos por todas las instancias del objeto creado con esa función constructora o clase.
+
+Uso de Prototype: Si un método es común para todas las instancias, es más eficiente definirlo en el prototipo de la clase o función constructora en lugar de definirlo dentro del constructor. De esta manera, se guarda una sola copia del método que todas las instancias comparten.
+
+*/
+
+function Vehiculo(marca, modelo) {
+  this.marca = marca;
+  this.modelo = modelo;
+}
+
+Vehiculo.prototype.mostrarInfo = function() {
+  console.log(`Este vehículo es un ${this.marca} modelo ${this.modelo}.`);
+};
+
+const vehiculo1 = new Vehiculo('Toyota', 'Corolla');
+const vehiculo2 = new Vehiculo('Honda', 'Civic');
+
+vehiculo1.mostrarInfo(); // Output: Este vehículo es un Toyota modelo Corolla.
+vehiculo2.mostrarInfo(); // Output: Este vehículo es un Honda modelo Civic.
+
+
+/*
+
+En este ejemplo, mostrarInfo está en el prototipo de Vehiculo, por lo que ambas instancias (vehiculo1 y vehiculo2) comparten el mismo método sin duplicar código.
+
+*/
+
+
+/*
+4. Herencia
+La herencia es un concepto clave en la programación orientada a objetos que permite crear una nueva clase basada en una clase existente. Esto significa que la nueva clase hereda todas las propiedades y métodos de la clase padre, pero puede añadir o modificar sus propios métodos y propiedades.
+
+Uso de extends: En JavaScript, se utiliza la palabra clave extends para indicar que una clase hereda de otra.
+Uso de super: Dentro del constructor de la clase hija, super llama al constructor de la clase padre para heredar sus propiedades y métodos.
+*/
+
+class Empleado {
+  constructor(nombre, salario) {
+      this.nombre = nombre;
+      this.salario = salario;
+  }
+
+  mostrarInfo() {
+      console.log(`Empleado: ${this.nombre}, Salario: ${this.salario}`);
+  }
+}
+
+class Gerente extends Empleado {
+  constructor(nombre, salario, departamento) {
+      super(nombre, salario); // Llama al constructor de Empleado
+      this.departamento = departamento;
+  }
+
+  mostrarInfo() {
+      super.mostrarInfo(); // Llama al método mostrarInfo de la clase padre
+      console.log(`Departamento: ${this.departamento}`);
+  }
+}
+
+const gerente1 = new Gerente('Carlos', 80000, 'Ventas');
+const empleado1 = new Empleado('Pedro', 60000);
+
+gerente1.mostrarInfo();
+empleado1.mostrarInfo();
+
+// Output:
+// Empleado: Carlos, Salario: 80000
+// Departamento: Ventas
+
+
+/*
+
+En este ejemplo:
+
+Empleado es la clase padre con propiedades nombre y salario y el método mostrarInfo.
+Gerente es la clase hija que hereda de Empleado, añadiendo una propiedad departamento y redefiniendo el método mostrarInfo para incluir más información.
+
+*/
